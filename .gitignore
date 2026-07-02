@@ -1,0 +1,6 @@
+# Virtual Environment 
+game-env/
+
+# Python Cache (CRITICAL - causes cross-platform crashes)
+__pycache__/
+*.pyc
