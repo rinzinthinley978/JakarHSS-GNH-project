@@ -1,3 +1,6 @@
-# Stable environment for Python 3.13.x
-pygame-ce==2.5.7
-pytmx==3.32
+#Stable environment for Python 3.12.x
+pygame>=2.6.0
+pygame-gui>=0.6.12
+shapely>=2.0.6
+geojson>=3.1.0
+matplotlib>=3.8.0
