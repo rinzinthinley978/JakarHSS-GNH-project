@@ -1,75 +1,54 @@
-import sys
-
 import pygame
-import pygame_menu
 
 
-class LoadingScreen:
-    def __init__(self, surface, width, height):
-        self.surface = surface
-        self.width = width
-        self.height = height
-        self.clock = pygame.time.Clock()
-        self.loading_complete = False
+class loadingScreen:
+    def __init__(self, screen):
+        self.screen = screen
+        self.width, self.height = screen.get_size()
+        self.work = 100000000
+        self.loading_font = pygame.font.SysFont("Times New Roman", 50)
+        self.loading = self.loading_font.render("Loading . . .", True, (10, 255, 10))
 
-        # Custom Event ID
-        self.LOADING_EVENT = pygame.USEREVENT + 1
+        try:
+            self.loading_bar_progress = pygame.image.load(
+                "assets/ui/loading_bar_progress.png"
+            ).convert_alpha()
+            self.loading_bar_layout = pygame.image.load(
+                "assets/ui/loading_bar_layout.png"
+            ).convert_alpha()
+            self.gameIcon = pygame.image.load("assets/ui/icon.png").convert_alpha()
+        except FileNotFoundError:
+            print("File missing, pleasse recheck the files")
 
-        # Create Loading Menu
-        self.menu = pygame_menu.Menu(
-            "Loading", width, height, theme=pygame_menu.themes.THEME_DARK
+        self.loading_bar_layout_rect = self.loading_bar_layout.get_rect(
+            center=(640, 525)
         )
-        self.status_label = self.menu.add.label("Initializing...", label_id="status")
-        self.progress_bar = self.menu.add.progress_bar(
-            "Progress: ", progressbar_id="1", default=0, width=300
+        self.loading_bar_progress_rect = self.loading_bar_progress.get_rect(
+            midleft=(280, 533)
         )
 
-    def _update_progress(self):
-        """Increment progress bar and check completion."""
-        current_val = self.progress_bar.get_value()
-        if current_val < 100:
-            new_val = current_val + 1
-            self.progress_bar.set_value(new_val)
+        self.scaledIcon = pygame.transform.smoothscale(self.gameIcon, (370, 370))
+        self.gameIcon_rect = self.scaledIcon.get_rect(center=(640, 250))
+        self.loading_rect = self.loading.get_rect(center=(640, 650))
 
-            # Update text status
-            if new_val < 30:
-                self.status_label.set_title("Loading assets...")
-            elif new_val < 70:
-                self.status_label.set_title("Processing data...")
-            else:
-                self.status_label.set_title("Finalizing...")
-        else:
-            self.loading_complete = True
-            pygame.time.set_timer(self.LOADING_EVENT, 0)  # Stop timer
+        self.loading_finsished = False
+        self.loading_progress = 0
+        self.loading_bar_width = 8
 
-    def run(self):
-        """
-        Runs the loading loop.
-        Returns True if loading completes, False if user quits.
-        """
-        # Start timer (updates every 50ms)
-        pygame.time.set_timer(self.LOADING_EVENT, 50)
+    def do_work(self):
+        for i in range(self.work):
+            self.loading_progress = i
+        self.loading_finsished = True
 
-        running = True
-        while running:
-            events = pygame.event.get()
-            for event in events:
-                if event.type == pygame.QUIT:
-                    return False  # User quit
+    def check_loading(self):
+        if not self.loading_finsished:
+            ratio = float(self.loading_progress) / float(self.work)
 
-                if event.type == self.LOADING_EVENT and not self.loading_complete:
-                    self._update_progress()
+            self.loading_bar_width = int(ratio * 720)
 
-            # Draw
-            self.surface.fill((30, 30, 30))  # Dark background
+            self.loading_bar_progress = pygame.transform.scale(self.loading_bar_progress, (int(self.loading_bar_width), 150))
 
-            if not self.loading_complete:
-                self.menu.update(events)
-                self.menu.draw(self.surface)
-            else:
-                running = False  # Exit loop when 100%
-
-            pygame.display.flip()
-            self.clock.tick(60)
-
-        return True  # Success
+            self.screen.blit(self.loading_bar_layout, self.loading_bar_layout_rect)
+            self.screen.blit(self.loading_bar_progress, self.loading_bar_progress_rect)
+            self.screen.blit(self.scaledIcon, self.gameIcon_rect)
+            self.screen.blit(self.loading, self.loading_rect)

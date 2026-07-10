@@ -1,37 +1,41 @@
-# importing the required libraries
-import sys  # for system-level operations
+import sys
+import threading
+import time
 
-import pygame as pg  # for game development
+import pygame
 
-# initializing pygame
-pg.init()
+from game_func.loading import loadingScreen
 
+time.sleep(0.5)
+pygame.init()
+pygame.mixer.init()
 
-# assigning required variables to control the flow of the game
-# assigning the variables related to the display
-title = "Gross National Happiness Simulator"
-game_icon = pg.image.load("logo.png")
-screen = pg.display.set_mode((0, 0), pg.FULLSCREEN)
+pygame.mixer.music.load("assets/sounds/background/M1.wav")
+pygame.mixer.music.play(-1)
+pygame.mixer.music.set_volume(0.5)
 
-# assigning the variables related to the game loop
+WIDTH = 1280
+HEIGHT = 720
+game_icon = pygame.image.load("assets/ui/icon.png")
+screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.FULLSCREEN)
+title = "GNH"
+clock = pygame.time.Clock()
 running = True
-clock = pg.time.Clock()
+frames = 60
 
-# assigning the game icon and caption/title
-pg.display.set_icon(game_icon)
-pg.display.set_caption(title)
+loader = loadingScreen(screen)
+threading.Thread(target=loader.do_work).start()
 
+pygame.display.set_icon(game_icon)
+pygame.display.set_caption(title)
 
-# main game loop
 while running:
-    for event in pg.event.get():
-        if event.type == pg.QUIT:
+    screen.fill("#0b0e2e")
+    loader.check_loading()
+    for event in pygame.event.get():
+        if event == pygame.QUIT:
             running = False
-
-    # updating the display and ticking the clock
-    pg.display.flip()
-    clock.tick(60)
-
-# quitting pygame
-pg.quit()
+    pygame.display.flip()
+    clock.tick(frames)
+pygame.quit()
 sys.exit()
