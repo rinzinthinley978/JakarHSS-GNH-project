@@ -5,9 +5,11 @@ class loadingScreen:
         self.dl = data_loader_instanace
         self.screen = self.dl.screen
         self.width, self.height = self.dl.WIDTH, self.dl.HEIGHT
-        self.work = 100000000
         self.loading_font = pygame.font.SysFont("Times New Roman", 50)
         self.loading = self.loading_font.render("Loading . . .", True, (10, 255, 10))
+        self.work = 1000
+        self.target_duration_ms = 4500
+
 
         try:
             self.loading_bar_progress = pygame.image.load(
@@ -19,6 +21,7 @@ class loadingScreen:
             ).convert_alpha()
             self.loading_bar_layout = pygame.transform.scale(self.loading_bar_layout, (int(self.width*0.59), int(self.height*0.2)))
             self.gameIcon = pygame.image.load("assets/ui/icon.png").convert_alpha()
+
         except FileNotFoundError:
             print("File missing, pleasse recheck the files")
 
@@ -37,16 +40,21 @@ class loadingScreen:
         self.loading_progress = 0
         self.loading_bar_width = 8
 
-    def do_work(self):
-        for i in range(self.work):
-            self.loading_progress = i
-        self.loading_finsished = True
+    def do_work(self, dt):
+        if self.loading_finsished:
+                return
+
+        self.loading_progress += (dt / self.target_duration_ms) * self.work
+
+        if self.loading_progress >= self.work:
+            self.loading = self.work
+            self.loading_finsished = True
 
     def check_loading(self):
         if not self.loading_finsished:
             ratio = float(self.loading_progress) / float(self.work)
 
-            self.loading_bar_width = int(ratio * 2)
+            self.loading_bar_width = int(ratio * self.height)
 
             self.loading_bar_progress = pygame.transform.scale(self.loading_bar_progress, (int(self.loading_bar_width), 150))
 

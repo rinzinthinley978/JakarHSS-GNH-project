@@ -38,8 +38,8 @@ class DistProc:
 
     def conversion(self, raw_x, raw_y):
         final_pygame_x= ((raw_x - self.overall_minx) * self.final_scale) + self.x_offset
-        final_pygame_y = (self.height -(raw_y - self.overall_miny) * self.final_scale) - self.y_offset
-        return int(final_pygame_x), int(final_pygame_y)
+        final_pygame_y = (self.height - (raw_y - self.overall_miny) * self.final_scale) - self.y_offset
+        return int(round(final_pygame_x + 0.5)), int(round(final_pygame_y + 0.5))
 
     def poly_maker(self):
         with open('data/pygame_coordinates.json', 'r') as file:
@@ -50,5 +50,5 @@ class DistProc:
         for values in data:
             coords = values['coords']
             name = values['name']
-            poly = Polygon(coords).buffer(-3)
+            poly = Polygon(coords)
             self.districts[name] = poly
