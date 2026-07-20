@@ -7,15 +7,18 @@ class DataLoader:
         self.main_menu = pygame.image.load('assets/ui/main_menu.png')
         self.game_icon = pygame.image.load("assets/ui/icon.png")
         info = pygame.display.Info()
-        self.WIDTH = 1280
-        self.HEIGHT = 720
-        self.screen = pygame.display.set_mode((self.WIDTH, self.HEIGHT),pygame.RESIZABLE)
+        self.WIDTH = info.current_w
+        self.HEIGHT = info.current_h
+        self.screen = pygame.display.set_mode((self.WIDTH, self.HEIGHT),pygame.FULLSCREEN,pygame.RESIZABLE)
         self.title = "GNH"
         self.selected_district = None
         self.hovered = None
         self.mousePos = pygame.mouse.get_pos()
         self.frames = 60
         self.clock = pygame.time.Clock()
+        orig_mouse_sprite = pygame.image.load('assets/ui/mouse_icon.png').convert_alpha()
+        mouse_sprite = pygame.transform.scale(orig_mouse_sprite, (32,32))
+        self.cursor_sprite = pygame.cursors.Cursor((0,0), mouse_sprite)
 
     def show_fps(self, enabled):
         enabled = bool(enabled)

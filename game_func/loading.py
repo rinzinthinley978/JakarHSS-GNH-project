@@ -1,12 +1,12 @@
 import pygame
 
 class loadingScreen:
-    def __init__(self, data_loader_instanace):
+    def __init__(self, data_loader_instanace, font_manager_instance):
         self.dl = data_loader_instanace
+        self.font = font_manager_instance
         self.screen = self.dl.screen
         self.width, self.height = self.dl.WIDTH, self.dl.HEIGHT
-        self.loading_font = pygame.font.SysFont("Times New Roman", 50)
-        self.loading = self.loading_font.render("Loading . . .", True, (10, 255, 10))
+        self.loading_text = self.font.Font('LOADING . . .', "#4AA611", 60)
         self.work = 1000
         self.target_duration_ms = 4500
 
@@ -34,7 +34,7 @@ class loadingScreen:
 
         self.scaledIcon = pygame.transform.scale(self.gameIcon, (370, 370))
         self.gameIcon_rect = self.scaledIcon.get_rect(center=(self.width//2, int(self.height*0.347)))
-        self.loading_rect = self.loading.get_rect(center=(self.width//2, int(self.height*0.9)))
+        self.loading_rect = self.loading_text.get_rect(center=(self.width//2, int(self.height*0.9)))
 
         self.loading_finsished = False
         self.loading_progress = 0
@@ -61,4 +61,4 @@ class loadingScreen:
             self.screen.blit(self.loading_bar_layout, self.loading_bar_layout_rect)
             self.screen.blit(self.loading_bar_progress, self.loading_bar_progress_rect)
             self.screen.blit(self.scaledIcon, self.gameIcon_rect)
-            self.screen.blit(self.loading , self.loading_rect)
+            self.screen.blit(self.loading_text , self.loading_rect)

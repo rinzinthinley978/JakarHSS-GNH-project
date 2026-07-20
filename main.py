@@ -6,26 +6,28 @@ from game_func.district_loader import MapScreen
 from game_func.loading import loadingScreen
 from game_func.data_loader import DataLoader
 from game_func.districts_process import DistProc
+from game_func.ui_panel import Panel
+from game_func.font_manager import FontManager
 
-time.sleep(0.5)
 pygame.init()
 pygame.mixer.init()
-
 dl = DataLoader()
 proc = DistProc(dl)
-loader = loadingScreen(dl)
+font = FontManager()
+loader = loadingScreen(dl, font)
+panel = Panel(dl, font)
 
 if os.path.exists('data/pygame_coordinates.json'):
     print("Coordinates checked!, Loading...")
 else:
     from game_func.json_convertor import Convertor
     print("⚠️  Coordinates missing! Generating now...")
-    print("    Processing GeoJSON data...")
+    print("    Processing GeoJSON lf.text = self.font.Font()data...")
     js_conv = Convertor(dl, proc)
     js_conv.convertJson()
     print("    Conversion complete! File saved.")
 
-map = MapScreen(dl,proc)
+map = MapScreen(dl, proc, font)
 
 pygame.mixer.music.play(-1)
 pygame.mixer.music.set_volume(0.5)
@@ -36,6 +38,8 @@ pygame.display.set_caption(dl.title)
 running = True
 last_mousePos = None
 
+pygame.mouse.set_cursor(dl.cursor_sprite)
+time.sleep(0.5)
 while running:
     dl.mousePos = pygame.mouse.get_pos()
     dl.screen.fill('#fff0f1')
@@ -51,11 +55,12 @@ while running:
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 map.check_click()
-                print("selected", dl.selected_district)
+    if dl.selected_district != None:
+        panel.draw_panel()
+
     if not loader.loading_finsished:
         loader.check_loading()
     else:
-        dl.screen.fill('#474427')
         map.draw(dl.screen)
     pygame.display.flip()
 pygame.quit()
