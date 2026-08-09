@@ -1,0 +1,1507 @@
+{
+  "decisions": [
+    {
+      "id": "internet_village_expansion",
+      "title": "Internet for Remote Villages",
+      "category": "governance",
+      "phase": "early",
+      "description": "A telecom company proposes laying fiber optic cables to connect remote villages, promising economic opportunities. The project requires clearing forested paths and installing towers, which disturbs wildlife and traditional ways.",
+      "prerequisites": {
+        "min_turn": 0,
+        "max_turn": 5,
+        "forbidden_flags": [],
+        "required_flags": []
+      },
+      "options": [
+        {
+          "text": "Approve fiber optic expansion immediately",
+          "effects": {
+            "pillars": {
+              "economy": 12,
+              "environment": -8,
+              "culture": -6,
+              "governance": 3
+            },
+            "hidden": {
+              "social_unrest": 3,
+              "ecological_stress": 8,
+              "corruption_index": 2,
+              "foreign_influence": 8,
+              "public_trust": -4
+            }
+          },
+          "set_flags": ["fiber_optic_internet"],
+          "remove_flags": [],
+          "delayed": [
+            {
+              "turns": 2,
+              "effects": {
+                "pillars": { "culture": -4 },
+                "hidden": { "foreign_influence": 6 }
+              },
+              "message": "Foreign streaming content erodes local storytelling traditions."
+            }
+          ],
+          "advisors": {
+            "economist": "Connectivity will spark entrepreneurship.",
+            "ranger": "Trenches will scar pristine habitats.",
+            "monk": "Real connection comes from within, not wires."
+          }
+        },
+        {
+          "text": "Reject expansion, preserve traditional isolation",
+          "effects": {
+            "pillars": {
+              "economy": -10,
+              "environment": 10,
+              "culture": 12,
+              "governance": 0
+            },
+            "hidden": {
+              "social_unrest": -3,
+              "ecological_stress": -8,
+              "corruption_index": 0,
+              "foreign_influence": -12,
+              "public_trust": 8
+            }
+          },
+          "set_flags": ["traditional_isolation_preserved"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Isolation condemns youth to poverty.",
+            "ranger": "Forests remain untouched, magnificent!",
+            "monk": "Preserving silence guards spiritual depth."
+          }
+        },
+        {
+          "text": "Pilot solar-powered community Wi-Fi hubs",
+          "effects": {
+            "pillars": {
+              "economy": 4,
+              "environment": 4,
+              "culture": 3,
+              "governance": 6
+            },
+            "hidden": {
+              "social_unrest": 0,
+              "ecological_stress": 1,
+              "corruption_index": -3,
+              "foreign_influence": 1,
+              "public_trust": 4
+            }
+          },
+          "set_flags": ["community_internet_hubs"],
+          "remove_flags": [],
+          "delayed": [
+            {
+              "turns": 1,
+              "effects": {
+                "pillars": { "economy": 4 },
+                "hidden": { "public_trust": 4 }
+              },
+              "message": "Local digital literacy workshops begin to flourish."
+            }
+          ],
+          "advisors": {
+            "economist": "Small steps, but sustainable growth.",
+            "ranger": "Clever, minimal forest intrusion.",
+            "monk": "Balance—sharing knowledge wisely."
+          }
+        }
+      ]
+    },
+    {
+      "id": "hydropower_dam_proposal",
+      "title": "Hydropower Dam on District River",
+      "category": "economic",
+      "phase": "early",
+      "description": "A consortium proposes a large dam on your district's main river, promising cheap electricity and revenue from energy exports. But the dam would flood fertile farmlands and sacred sites, displacing entire communities.",
+      "prerequisites": {
+        "min_turn": 0,
+        "max_turn": 5,
+        "forbidden_flags": [],
+        "required_flags": []
+      },
+      "options": [
+        {
+          "text": "Approve dam construction",
+          "effects": {
+            "pillars": {
+              "economy": 12,
+              "environment": -10,
+              "culture": -8,
+              "governance": 4
+            },
+            "hidden": {
+              "social_unrest": 8,
+              "ecological_stress": 12,
+              "corruption_index": 5,
+              "foreign_influence": 8,
+              "public_trust": -8
+            }
+          },
+          "set_flags": ["dam_approved"],
+          "remove_flags": [],
+          "delayed": [
+            {
+              "turns": 3,
+              "effects": {
+                "pillars": { "environment": -8 },
+                "hidden": { "ecological_stress": 8, "social_unrest": 5 }
+              },
+              "message": "Reservoir siltation and displaced families cause persistent unrest."
+            }
+          ],
+          "advisors": {
+            "economist": "Power exports will fund our future.",
+            "ranger": "A drowning river screams in silence.",
+            "monk": "Flooding sacred ground severs ancestral ties."
+          }
+        },
+        {
+          "text": "Reject dam, protect river and heritage",
+          "effects": {
+            "pillars": {
+              "economy": -12,
+              "environment": 12,
+              "culture": 12,
+              "governance": -3
+            },
+            "hidden": {
+              "social_unrest": -4,
+              "ecological_stress": -12,
+              "corruption_index": -4,
+              "foreign_influence": -8,
+              "public_trust": 12
+            }
+          },
+          "set_flags": ["river_protected"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "We sacrifice rivers of revenue.",
+            "ranger": "The river will sing forever.",
+            "monk": "We honor our ancestors' spirits."
+          }
+        },
+        {
+          "text": "Negotiate a smaller run-of-river project",
+          "effects": {
+            "pillars": {
+              "economy": 6,
+              "environment": -3,
+              "culture": 0,
+              "governance": 8
+            },
+            "hidden": {
+              "social_unrest": 1,
+              "ecological_stress": 4,
+              "corruption_index": 0,
+              "foreign_influence": 3,
+              "public_trust": 4
+            }
+          },
+          "set_flags": ["small_hydro_negotiated"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Half a loaf is better than none.",
+            "ranger": "Still a wound, but smaller.",
+            "monk": "Compromise is the path of the middle way."
+          }
+        }
+      ]
+    },
+    {
+      "id": "plastic_ban_debate",
+      "title": "Enforce Plastic Ban",
+      "category": "environmental",
+      "phase": "early",
+      "description": "Single-use plastics are choking streams and killing livestock. A strict ban on plastic bags and packaging is proposed, but traders warn it could devastate small businesses reliant on cheap packaging.",
+      "prerequisites": {
+        "min_turn": 0,
+        "max_turn": 5,
+        "forbidden_flags": [],
+        "required_flags": []
+      },
+      "options": [
+        {
+          "text": "Issue unlimited exemptions for businesses",
+          "effects": {
+            "pillars": {
+              "economy": 10,
+              "environment": -12,
+              "culture": -3,
+              "governance": -8
+            },
+            "hidden": {
+              "social_unrest": -4,
+              "ecological_stress": 12,
+              "corruption_index": 8,
+              "foreign_influence": 0,
+              "public_trust": -12
+            }
+          },
+          "set_flags": ["plastic_exemptions"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Protecting small shops prevents collapse.",
+            "ranger": "Plastic rivers kill sacred fish.",
+            "monk": "Greed disguised as compassion."
+          }
+        },
+        {
+          "text": "Enforce strict ban with heavy fines",
+          "effects": {
+            "pillars": {
+              "economy": -10,
+              "environment": 14,
+              "culture": 6,
+              "governance": 6
+            },
+            "hidden": {
+              "social_unrest": 8,
+              "ecological_stress": -12,
+              "corruption_index": -4,
+              "foreign_influence": 0,
+              "public_trust": 8
+            }
+          },
+          "set_flags": ["strict_plastic_ban"],
+          "remove_flags": [],
+          "delayed": [
+            {
+              "turns": 2,
+              "effects": {
+                "pillars": { "culture": 4 },
+                "hidden": { "public_trust": 4 }
+              },
+              "message": "Traditional woven baskets regain popularity."
+            }
+          ],
+          "advisors": {
+            "economist": "Small vendors will be crushed.",
+            "ranger": "Nature finally breathes again.",
+            "monk": "Discipline purifies the land."
+          }
+        },
+        {
+          "text": "Phase-in ban with support for alternatives",
+          "effects": {
+            "pillars": {
+              "economy": -3,
+              "environment": 8,
+              "culture": 4,
+              "governance": 10
+            },
+            "hidden": {
+              "social_unrest": 0,
+              "ecological_stress": -4,
+              "corruption_index": 0,
+              "foreign_influence": 0,
+              "public_trust": 8
+            }
+          },
+          "set_flags": ["phased_plastic_ban"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Gradual transition cushions the blow.",
+            "ranger": "Too slow, but better than nothing.",
+            "monk": "Patient change endures."
+          }
+        }
+      ]
+    },
+    {
+      "id": "national_language_schools",
+      "title": "Decline of National Language",
+      "category": "cultural",
+      "phase": "early",
+      "description": "Students increasingly prefer English, and fluency in the national language is plummeting. A proposal mandates all subjects taught in the mother tongue until grade 8, but employers fear graduates lacking English skills.",
+      "prerequisites": {
+        "min_turn": 0,
+        "max_turn": 5,
+        "forbidden_flags": [],
+        "required_flags": []
+      },
+      "options": [
+        {
+          "text": "Mandate English-only from grade 4",
+          "effects": {
+            "pillars": {
+              "economy": 12,
+              "environment": 0,
+              "culture": -12,
+              "governance": -3
+            },
+            "hidden": {
+              "social_unrest": -4,
+              "ecological_stress": 0,
+              "corruption_index": 0,
+              "foreign_influence": 12,
+              "public_trust": -8
+            }
+          },
+          "set_flags": ["english_emphasis"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Global job market demands English.",
+            "ranger": "Language loss erodes nature's names.",
+            "monk": "Without mother tongue, wisdom fades."
+          }
+        },
+        {
+          "text": "Impose mother-tongue medium until grade 8",
+          "effects": {
+            "pillars": {
+              "economy": -10,
+              "environment": 4,
+              "culture": 14,
+              "governance": 6
+            },
+            "hidden": {
+              "social_unrest": 4,
+              "ecological_stress": 0,
+              "corruption_index": -4,
+              "foreign_influence": -8,
+              "public_trust": 12
+            }
+          },
+          "set_flags": ["mother_tongue_mandate"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Our graduates will fall behind.",
+            "ranger": "Language roots bind people to land.",
+            "monk": "Preserving speech preserves the soul."
+          }
+        },
+        {
+          "text": "Bilingual immersion with cultural festivals",
+          "effects": {
+            "pillars": {
+              "economy": 4,
+              "environment": 0,
+              "culture": 10,
+              "governance": 8
+            },
+            "hidden": {
+              "social_unrest": 0,
+              "ecological_stress": 0,
+              "corruption_index": 0,
+              "foreign_influence": 0,
+              "public_trust": 8
+            }
+          },
+          "set_flags": ["bilingual_harmony"],
+          "remove_flags": [],
+          "delayed": [
+            {
+              "turns": 1,
+              "effects": {
+                "pillars": { "culture": 4 },
+                "hidden": { "public_trust": 4 }
+              },
+              "message": "Intergenerational storytelling events grow."
+            }
+          ],
+          "advisors": {
+            "economist": "A bilingual workforce is adaptable.",
+            "ranger": "Singing the old names protects mountains.",
+            "monk": "Harmony of tongues, harmony of hearts."
+          }
+        }
+      ]
+    },
+    {
+      "id": "foreign_hotel_forest",
+      "title": "Foreign Hotel on Forest Land",
+      "category": "economic",
+      "phase": "early",
+      "description": "An international hotel chain offers massive investment to build a luxury resort on pristine forest land, promising jobs and tourism revenue. Environmentalists warn of deforestation and spiritual site destruction.",
+      "prerequisites": {
+        "min_turn": 0,
+        "max_turn": 5,
+        "forbidden_flags": [],
+        "required_flags": []
+      },
+      "options": [
+        {
+          "text": "Approve full hotel development",
+          "effects": {
+            "pillars": {
+              "economy": 14,
+              "environment": -14,
+              "culture": -8,
+              "governance": 3
+            },
+            "hidden": {
+              "social_unrest": 4,
+              "ecological_stress": 12,
+              "corruption_index": 8,
+              "foreign_influence": 14,
+              "public_trust": -8
+            }
+          },
+          "set_flags": ["luxury_hotel_approved"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Tourism goldmine, jobs galore!",
+            "ranger": "Ancient trees will become lobbies.",
+            "monk": "Selling sacred ground invites curses."
+          }
+        },
+        {
+          "text": "Reject, designate protected forest",
+          "effects": {
+            "pillars": {
+              "economy": -12,
+              "environment": 14,
+              "culture": 10,
+              "governance": 4
+            },
+            "hidden": {
+              "social_unrest": -4,
+              "ecological_stress": -12,
+              "corruption_index": -4,
+              "foreign_influence": -8,
+              "public_trust": 12
+            }
+          },
+          "set_flags": ["forest_sanctuary"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "We strangle our own prosperity.",
+            "ranger": "Sanctuary for spirits and species.",
+            "monk": "Protecting nature is the highest prayer."
+          }
+        },
+        {
+          "text": "Mandate eco-lodge with community ownership",
+          "effects": {
+            "pillars": {
+              "economy": 6,
+              "environment": 4,
+              "culture": 6,
+              "governance": 8
+            },
+            "hidden": {
+              "social_unrest": 0,
+              "ecological_stress": 0,
+              "corruption_index": -4,
+              "foreign_influence": 3,
+              "public_trust": 8
+            }
+          },
+          "set_flags": ["eco_tourism_pilot"],
+          "remove_flags": [],
+          "delayed": [
+            {
+              "turns": 2,
+              "effects": {
+                "pillars": { "economy": 4 },
+                "hidden": { "public_trust": 4 }
+              },
+              "message": "Community-led eco-tourism earns national praise."
+            }
+          ],
+          "advisors": {
+            "economist": "Local ownership keeps profits home.",
+            "ranger": "Careful design treads lightly.",
+            "monk": "A balance of commerce and compassion."
+          }
+        }
+      ]
+    },
+    {
+      "id": "tourism_oversaturation",
+      "title": "Tourism Growing Too Fast",
+      "category": "economic",
+      "phase": "mid",
+      "description": "A tourism boom fills guesthouses and trails, but the surge is overwhelming waste systems and eroding trails. Locals complain of cultural commodification and rising prices.",
+      "prerequisites": {
+        "min_turn": 6,
+        "max_turn": 10,
+        "forbidden_flags": [],
+        "required_flags": []
+      },
+      "options": [
+        {
+          "text": "Launch aggressive marketing campaign",
+          "effects": {
+            "pillars": {
+              "economy": 12,
+              "environment": -10,
+              "culture": -12,
+              "governance": -3
+            },
+            "hidden": {
+              "social_unrest": 8,
+              "ecological_stress": 12,
+              "corruption_index": 4,
+              "foreign_influence": 12,
+              "public_trust": -8
+            }
+          },
+          "set_flags": ["tourism_surge"],
+          "remove_flags": [],
+          "delayed": [
+            {
+              "turns": 1,
+              "effects": {
+                "pillars": { "environment": -8 },
+                "hidden": { "ecological_stress": 8 }
+              },
+              "message": "Trail erosion leads to dangerous landslides."
+            }
+          ],
+          "advisors": {
+            "economist": "Empty beds earn no money.",
+            "ranger": "Our trails become trash scars.",
+            "monk": "Sacred dances sold as selfies."
+          }
+        },
+        {
+          "text": "Impose strict visitor limits and fees",
+          "effects": {
+            "pillars": {
+              "economy": -10,
+              "environment": 12,
+              "culture": 12,
+              "governance": 8
+            },
+            "hidden": {
+              "social_unrest": -4,
+              "ecological_stress": -12,
+              "corruption_index": -4,
+              "foreign_influence": -8,
+              "public_trust": 12
+            }
+          },
+          "set_flags": ["tourism_caps"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Revenue will plummet, jobs vanish.",
+            "ranger": "Finally, nature can heal.",
+            "monk": "Pilgrimage, not circus."
+          }
+        },
+        {
+          "text": "Promote regional dispersal with incentives",
+          "effects": {
+            "pillars": {
+              "economy": 4,
+              "environment": 6,
+              "culture": 4,
+              "governance": 10
+            },
+            "hidden": {
+              "social_unrest": 0,
+              "ecological_stress": -4,
+              "corruption_index": 0,
+              "foreign_influence": 3,
+              "public_trust": 8
+            }
+          },
+          "set_flags": ["tourism_dispersal"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Spread the wealth, reduce pressure.",
+            "ranger": "Share the burden, share the beauty.",
+            "monk": "Wise hosts guide, not exploit."
+          }
+        }
+      ]
+    },
+    {
+      "id": "road_through_sacred_area",
+      "title": "Road Through Monastery Area",
+      "category": "cultural",
+      "phase": "mid",
+      "description": "Engineers propose a road cutting through a serene monastic landscape to connect two valleys, slashing travel time. Monks and villagers protest, warning of noise, pollution, and spiritual disruption.",
+      "prerequisites": {
+        "min_turn": 6,
+        "max_turn": 10,
+        "forbidden_flags": [],
+        "required_flags": []
+      },
+      "options": [
+        {
+          "text": "Build road for economic connectivity",
+          "effects": {
+            "pillars": {
+              "economy": 12,
+              "environment": -10,
+              "culture": -14,
+              "governance": 3
+            },
+            "hidden": {
+              "social_unrest": 8,
+              "ecological_stress": 8,
+              "corruption_index": 4,
+              "foreign_influence": 0,
+              "public_trust": -12
+            }
+          },
+          "set_flags": ["sacred_road_constructed"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Connected valleys, thriving trade.",
+            "ranger": "Bulldozers through prayer grounds.",
+            "monk": "Noise kills meditation."
+          }
+        },
+        {
+          "text": "Preserve sacred silence, no road",
+          "effects": {
+            "pillars": {
+              "economy": -10,
+              "environment": 10,
+              "culture": 14,
+              "governance": -3
+            },
+            "hidden": {
+              "social_unrest": -4,
+              "ecological_stress": -8,
+              "corruption_index": -4,
+              "foreign_influence": 0,
+              "public_trust": 16
+            }
+          },
+          "set_flags": ["sacred_valley_protected"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Isolation breeds stagnation.",
+            "ranger": "Stillness is its own wealth.",
+            "monk": "Wise ancestors protect this place."
+          }
+        },
+        {
+          "text": "Construct a low-impact pilgrimage trail",
+          "effects": {
+            "pillars": {
+              "economy": 3,
+              "environment": 6,
+              "culture": 10,
+              "governance": 8
+            },
+            "hidden": {
+              "social_unrest": 0,
+              "ecological_stress": 0,
+              "corruption_index": 0,
+              "foreign_influence": 1,
+              "public_trust": 8
+            }
+          },
+          "set_flags": ["pilgrimage_trail"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Modest gains, but respectful.",
+            "ranger": "Footpaths leave gentle prints.",
+            "monk": "A path of devotion, not speed."
+          }
+        }
+      ]
+    },
+    {
+      "id": "modern_farming_chemicals",
+      "title": "Chemical vs Traditional Farming",
+      "category": "environmental",
+      "phase": "mid",
+      "description": "Farmers demand synthetic fertilizers and pesticides to boost yields against growing food demand. Yet traditional organic methods have sustained the land for centuries without poisoning the soil.",
+      "prerequisites": {
+        "min_turn": 6,
+        "max_turn": 10,
+        "forbidden_flags": [],
+        "required_flags": []
+      },
+      "options": [
+        {
+          "text": "Subsidize chemical inputs for farmers",
+          "effects": {
+            "pillars": {
+              "economy": 12,
+              "environment": -12,
+              "culture": -6,
+              "governance": 0
+            },
+            "hidden": {
+              "social_unrest": -8,
+              "ecological_stress": 12,
+              "corruption_index": 4,
+              "foreign_influence": 8,
+              "public_trust": -4
+            }
+          },
+          "set_flags": ["chemical_farming"],
+          "remove_flags": [],
+          "delayed": [
+            {
+              "turns": 2,
+              "effects": {
+                "pillars": { "environment": -8 },
+                "hidden": { "ecological_stress": 4 }
+              },
+              "message": "Water sources show alarming toxicity levels."
+            }
+          ],
+          "advisors": {
+            "economist": "High yields, food security.",
+            "ranger": "Soil dies, future starves.",
+            "monk": "Poisoning the earth poisons the soul."
+          }
+        },
+        {
+          "text": "Mandate organic farming, ban chemicals",
+          "effects": {
+            "pillars": {
+              "economy": -10,
+              "environment": 14,
+              "culture": 10,
+              "governance": 6
+            },
+            "hidden": {
+              "social_unrest": 12,
+              "ecological_stress": -12,
+              "corruption_index": -4,
+              "foreign_influence": -4,
+              "public_trust": 8
+            }
+          },
+          "set_flags": ["organic_mandate"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Yields will crash, hunger looms.",
+            "ranger": "Nature's way is eternal.",
+            "monk": "Respect the web of life."
+          }
+        },
+        {
+          "text": "Integrated pest management with training",
+          "effects": {
+            "pillars": {
+              "economy": 4,
+              "environment": 8,
+              "culture": 6,
+              "governance": 10
+            },
+            "hidden": {
+              "social_unrest": 0,
+              "ecological_stress": -4,
+              "corruption_index": 0,
+              "foreign_influence": 0,
+              "public_trust": 8
+            }
+          },
+          "set_flags": ["integrated_farming"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Smart farming balances books.",
+            "ranger": "Healthy fields, buzzing bees.",
+            "monk": "Wisdom marries old and new."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dam_environmental_management",
+      "title": "Manage Dam's Environmental Toll",
+      "category": "environmental",
+      "phase": "mid",
+      "description": "The dam is operational, but downstream ecosystems are collapsing, and siltation threatens its lifespan. Urgent measures are needed to mitigate damage while energy revenues flow.",
+      "prerequisites": {
+        "min_turn": 6,
+        "max_turn": 10,
+        "forbidden_flags": [],
+        "required_flags": ["dam_approved"]
+      },
+      "options": [
+        {
+          "text": "Maximize power output, ignore ecology",
+          "effects": {
+            "pillars": {
+              "economy": 14,
+              "environment": -14,
+              "culture": -4,
+              "governance": -8
+            },
+            "hidden": {
+              "social_unrest": 8,
+              "ecological_stress": 16,
+              "corruption_index": 4,
+              "foreign_influence": 4,
+              "public_trust": -12
+            }
+          },
+          "set_flags": ["dam_max_power"],
+          "remove_flags": [],
+          "delayed": [
+            {
+              "turns": 1,
+              "effects": {
+                "pillars": { "environment": -8 },
+                "hidden": { "ecological_stress": 8 }
+              },
+              "message": "Fish stocks collapse, angering fishermen."
+            }
+          ],
+          "advisors": {
+            "economist": "Full throttle repays debts.",
+            "ranger": "A river murdered for megawatts.",
+            "monk": "Greed blinds us to downstream tears."
+          }
+        },
+        {
+          "text": "Release environmental flows, cut power",
+          "effects": {
+            "pillars": {
+              "economy": -10,
+              "environment": 14,
+              "culture": 8,
+              "governance": 8
+            },
+            "hidden": {
+              "social_unrest": -4,
+              "ecological_stress": -16,
+              "corruption_index": -4,
+              "foreign_influence": -4,
+              "public_trust": 12
+            }
+          },
+          "set_flags": ["dam_eco_flows"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Reduced revenue, but river lives.",
+            "ranger": "The river gasps back to life.",
+            "monk": "Giving back is true wealth."
+          }
+        },
+        {
+          "text": "Retrofit with fish ladders and sediment bypass",
+          "effects": {
+            "pillars": {
+              "economy": -3,
+              "environment": 8,
+              "culture": 0,
+              "governance": 12
+            },
+            "hidden": {
+              "social_unrest": 0,
+              "ecological_stress": -4,
+              "corruption_index": 0,
+              "foreign_influence": 0,
+              "public_trust": 8
+            }
+          },
+          "set_flags": ["dam_mitigation"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Costly but preserves asset.",
+            "ranger": "Some healing, but scar remains.",
+            "monk": "Repair what can be repaired."
+          }
+        }
+      ]
+    },
+    {
+      "id": "digital_literacy_program",
+      "title": "Expand Digital Literacy Programs",
+      "category": "cultural",
+      "phase": "mid",
+      "description": "With internet now reaching villages, a proposal emerges to equip schools with digital devices and teach coding, but elders fear it will accelerate the erosion of traditional skills and storytelling.",
+      "prerequisites": {
+        "min_turn": 6,
+        "max_turn": 10,
+        "forbidden_flags": [],
+        "required_flags": ["fiber_optic_internet"]
+      },
+      "options": [
+        {
+          "text": "Distribute tablets, prioritize tech skills",
+          "effects": {
+            "pillars": {
+              "economy": 12,
+              "environment": -3,
+              "culture": -10,
+              "governance": 4
+            },
+            "hidden": {
+              "social_unrest": -4,
+              "ecological_stress": 4,
+              "corruption_index": 0,
+              "foreign_influence": 12,
+              "public_trust": -4
+            }
+          },
+          "set_flags": ["digital_skills_push"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Future-proof workforce.",
+            "ranger": "E-waste poisons our land.",
+            "monk": "Screens dim the inner light."
+          }
+        },
+        {
+          "text": "Reject devices, fund storytelling guilds",
+          "effects": {
+            "pillars": {
+              "economy": -10,
+              "environment": 6,
+              "culture": 14,
+              "governance": -3
+            },
+            "hidden": {
+              "social_unrest": 4,
+              "ecological_stress": 0,
+              "corruption_index": 0,
+              "foreign_influence": -8,
+              "public_trust": 12
+            }
+          },
+          "set_flags": ["storytelling_revival"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "We'll miss the digital wave.",
+            "ranger": "Oral tradition guards the forest's wisdom.",
+            "monk": "Stories carry the soul of our people."
+          }
+        },
+        {
+          "text": "Hybrid digital-heritage curriculum",
+          "effects": {
+            "pillars": {
+              "economy": 4,
+              "environment": 0,
+              "culture": 8,
+              "governance": 10
+            },
+            "hidden": {
+              "social_unrest": 0,
+              "ecological_stress": 0,
+              "corruption_index": 0,
+              "foreign_influence": 1,
+              "public_trust": 8
+            }
+          },
+          "set_flags": ["digital_heritage_blend"],
+          "remove_flags": [],
+          "delayed": [
+            {
+              "turns": 1,
+              "effects": {
+                "pillars": { "culture": 4 },
+                "hidden": { "public_trust": 4 }
+              },
+              "message": "Students document elder stories as podcasts."
+            }
+          ],
+          "advisors": {
+            "economist": "Innovation rooted in identity.",
+            "ranger": "Technology can echo ancient songs.",
+            "monk": "Wise use bridges worlds."
+          }
+        }
+      ]
+    },
+    {
+      "id": "plastic_ban_review",
+      "title": "Review Strict Plastic Ban",
+      "category": "environmental",
+      "phase": "late",
+      "description": "Enforcement of the strict plastic ban has caused business closures and a thriving black market. Citizens demand relief, but environmentalists plead to hold the line.",
+      "prerequisites": {
+        "min_turn": 11,
+        "max_turn": 15,
+        "forbidden_flags": [],
+        "required_flags": ["strict_plastic_ban"]
+      },
+      "options": [
+        {
+          "text": "Relax ban, allow biodegradable plastics only",
+          "effects": {
+            "pillars": {
+              "economy": 8,
+              "environment": -4,
+              "culture": 0,
+              "governance": -4
+            },
+            "hidden": {
+              "social_unrest": -8,
+              "ecological_stress": 4,
+              "corruption_index": 4,
+              "foreign_influence": 4,
+              "public_trust": 4
+            }
+          },
+          "set_flags": ["plastic_ban_relaxed"],
+          "remove_flags": ["strict_plastic_ban"],
+          "delayed": [],
+          "advisors": {
+            "economist": "Businesses breathe again.",
+            "ranger": "A step back, plastic still flows.",
+            "monk": "Convenience over commitment."
+          }
+        },
+        {
+          "text": "Double down with stricter penalties",
+          "effects": {
+            "pillars": {
+              "economy": -8,
+              "environment": 14,
+              "culture": 4,
+              "governance": 8
+            },
+            "hidden": {
+              "social_unrest": 12,
+              "ecological_stress": -8,
+              "corruption_index": -4,
+              "foreign_influence": 0,
+              "public_trust": -4
+            }
+          },
+          "set_flags": ["plastic_ban_intensified"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Black market will boom.",
+            "ranger": "Nature over profit, finally.",
+            "monk": "Stern discipline purifies but angers."
+          }
+        },
+        {
+          "text": "Subsidize traditional alternatives, maintain ban",
+          "effects": {
+            "pillars": {
+              "economy": -3,
+              "environment": 10,
+              "culture": 8,
+              "governance": 10
+            },
+            "hidden": {
+              "social_unrest": 0,
+              "ecological_stress": -4,
+              "corruption_index": 0,
+              "foreign_influence": -4,
+              "public_trust": 8
+            }
+          },
+          "set_flags": ["plastic_ban_supported"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Costly but sustainable.",
+            "ranger": "Innovation honors the Earth.",
+            "monk": "Support eases the path of change."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dam_future_review",
+      "title": "Reassess Dam's Future",
+      "category": "economic",
+      "phase": "late",
+      "description": "The dam's debts are paid, but maintenance costs mount, and ecological damage persists. Voices call for decommissioning, while others push for an upgrade to maximize returns.",
+      "prerequisites": {
+        "min_turn": 11,
+        "max_turn": 15,
+        "forbidden_flags": [],
+        "required_flags": []
+      },
+      "options": [
+        {
+          "text": "Upgrade dam for greater capacity",
+          "effects": {
+            "pillars": {
+              "economy": 14,
+              "environment": -12,
+              "culture": -6,
+              "governance": -3
+            },
+            "hidden": {
+              "social_unrest": 8,
+              "ecological_stress": 12,
+              "corruption_index": 8,
+              "foreign_influence": 12,
+              "public_trust": -12
+            }
+          },
+          "set_flags": ["dam_expanded"],
+          "remove_flags": [],
+          "delayed": [
+            {
+              "turns": 2,
+              "effects": {
+                "pillars": { "environment": -10 },
+                "hidden": { "ecological_stress": 8 }
+              },
+              "message": "Downstream communities face catastrophic flooding risk."
+            }
+          ],
+          "advisors": {
+            "economist": "More power, more prosperity.",
+            "ranger": "They drown the soul of our land.",
+            "monk": "Endless appetite destroys all."
+          }
+        },
+        {
+          "text": "Decommission dam, restore river",
+          "effects": {
+            "pillars": {
+              "economy": -10,
+              "environment": 14,
+              "culture": 10,
+              "governance": 8
+            },
+            "hidden": {
+              "social_unrest": -4,
+              "ecological_stress": -16,
+              "corruption_index": -4,
+              "foreign_influence": -8,
+              "public_trust": 16
+            }
+          },
+          "set_flags": ["dam_decommissioned"],
+          "remove_flags": ["dam_approved"],
+          "delayed": [],
+          "advisors": {
+            "economist": "Madness to abandon a powerhouse.",
+            "ranger": "The river will dance again.",
+            "monk": "Undoing a mistake is wisdom."
+          }
+        },
+        {
+          "text": "Convert to run-of-river and eco-tourism",
+          "effects": {
+            "pillars": {
+              "economy": 4,
+              "environment": 8,
+              "culture": 4,
+              "governance": 10
+            },
+            "hidden": {
+              "social_unrest": 0,
+              "ecological_stress": -4,
+              "corruption_index": 0,
+              "foreign_influence": 0,
+              "public_trust": 8
+            }
+          },
+          "set_flags": ["dam_eco_conversion"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Modest profits, stable future.",
+            "ranger": "A compromise for the river.",
+            "monk": "Transformation not destruction."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sacred_road_reconsideration",
+      "title": "Sacred Road Reconsideration",
+      "category": "cultural",
+      "phase": "late",
+      "description": "Years of traffic through the sacred area have disturbed peace and eroded the site's sanctity. Pilgrims and monks petition to remove the road and restore the landscape.",
+      "prerequisites": {
+        "min_turn": 11,
+        "max_turn": 15,
+        "forbidden_flags": ["sacred_valley_protected"],
+        "required_flags": []
+      },
+      "options": [
+        {
+          "text": "Widen road for more traffic",
+          "effects": {
+            "pillars": {
+              "economy": 10,
+              "environment": -12,
+              "culture": -14,
+              "governance": -3
+            },
+            "hidden": {
+              "social_unrest": 12,
+              "ecological_stress": 12,
+              "corruption_index": 4,
+              "foreign_influence": 4,
+              "public_trust": -16
+            }
+          },
+          "set_flags": ["sacred_road_widened"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Efficiency fuels growth.",
+            "ranger": "Sacrilege on a grand scale.",
+            "monk": "They pave over prayer."
+          }
+        },
+        {
+          "text": "Remove road, restore monastery grounds",
+          "effects": {
+            "pillars": {
+              "economy": -8,
+              "environment": 12,
+              "culture": 14,
+              "governance": 8
+            },
+            "hidden": {
+              "social_unrest": -4,
+              "ecological_stress": -8,
+              "corruption_index": -4,
+              "foreign_influence": 0,
+              "public_trust": 16
+            }
+          },
+          "set_flags": ["sacred_restored"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Wasted infrastructure, lost connectivity.",
+            "ranger": "Sanctity returns, birds sing.",
+            "monk": "Healing the sacred heals us all."
+          }
+        },
+        {
+          "text": "Keep road but enforce silence hours",
+          "effects": {
+            "pillars": {
+              "economy": 0,
+              "environment": 4,
+              "culture": 8,
+              "governance": 8
+            },
+            "hidden": {
+              "social_unrest": 0,
+              "ecological_stress": 0,
+              "corruption_index": 0,
+              "foreign_influence": 0,
+              "public_trust": 4
+            }
+          },
+          "set_flags": ["sacred_road_quiet"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Barely affects business.",
+            "ranger": "Small gesture, loud impact.",
+            "monk": "Respecting time, respecting space."
+          }
+        }
+      ]
+    },
+    {
+      "id": "volunteer_service_expansion",
+      "title": "Volunteer Service Program",
+      "category": "cultural",
+      "phase": "late",
+      "description": "A national volunteer corps proposal aims to deploy youth for environmental restoration and elder care. Critics argue it diverts workers from the economy and risks forced labor.",
+      "prerequisites": {
+        "min_turn": 11,
+        "max_turn": 15,
+        "forbidden_flags": [],
+        "required_flags": []
+      },
+      "options": [
+        {
+          "text": "Focus on private sector jobs instead",
+          "effects": {
+            "pillars": {
+              "economy": 10,
+              "environment": -4,
+              "culture": -6,
+              "governance": -4
+            },
+            "hidden": {
+              "social_unrest": -4,
+              "ecological_stress": 4,
+              "corruption_index": 0,
+              "foreign_influence": 4,
+              "public_trust": -4
+            }
+          },
+          "set_flags": ["private_sector_focus"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Jobs, not charity, build nations.",
+            "ranger": "Neglected forests weep alone.",
+            "monk": "Without service, community withers."
+          }
+        },
+        {
+          "text": "Mandate a year of service for youth",
+          "effects": {
+            "pillars": {
+              "economy": -8,
+              "environment": 10,
+              "culture": 12,
+              "governance": 8
+            },
+            "hidden": {
+              "social_unrest": 8,
+              "ecological_stress": -8,
+              "corruption_index": -4,
+              "foreign_influence": -4,
+              "public_trust": 12
+            }
+          },
+          "set_flags": ["mandatory_service"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "A year lost from labor force.",
+            "ranger": "Youth will heal the forests.",
+            "monk": "Service plants seeds of compassion."
+          }
+        },
+        {
+          "text": "Incentivize with scholarships, not mandate",
+          "effects": {
+            "pillars": {
+              "economy": 6,
+              "environment": 4,
+              "culture": 8,
+              "governance": 8
+            },
+            "hidden": {
+              "social_unrest": -4,
+              "ecological_stress": 0,
+              "corruption_index": 0,
+              "foreign_influence": 0,
+              "public_trust": 8
+            }
+          },
+          "set_flags": ["volunteer_scholarships"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Choice respects the market.",
+            "ranger": "Willing hands nurture nature.",
+            "monk": "Free will earns true merit."
+          }
+        }
+      ]
+    },
+    {
+      "id": "esports_vs_traditional_sports",
+      "title": "E-Sports vs Traditional Sports",
+      "category": "cultural",
+      "phase": "late",
+      "description": "A budget battle erupts: investing in an e-sports arena to keep youth engaged versus expanding traditional archery and khuru grounds. Both claim to build community and discipline.",
+      "prerequisites": {
+        "min_turn": 11,
+        "max_turn": 15,
+        "forbidden_flags": ["mother_tongue_mandate"],
+        "required_flags": []
+      },
+      "options": [
+        {
+          "text": "Fund e-sports arena and digital leagues",
+          "effects": {
+            "pillars": {
+              "economy": 10,
+              "environment": 0,
+              "culture": -10,
+              "governance": -4
+            },
+            "hidden": {
+              "social_unrest": -4,
+              "ecological_stress": 0,
+              "corruption_index": 4,
+              "foreign_influence": 12,
+              "public_trust": -8
+            }
+          },
+          "set_flags": ["esports_funded"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "E-sports is a billion-dollar industry.",
+            "ranger": "Screens disconnect from nature.",
+            "monk": "Virtual glory fades like pixels."
+          }
+        },
+        {
+          "text": "Expand traditional archery and tournaments",
+          "effects": {
+            "pillars": {
+              "economy": -8,
+              "environment": 6,
+              "culture": 14,
+              "governance": 8
+            },
+            "hidden": {
+              "social_unrest": 4,
+              "ecological_stress": 0,
+              "corruption_index": -4,
+              "foreign_influence": -4,
+              "public_trust": 12
+            }
+          },
+          "set_flags": ["traditional_sports"],
+          "remove_flags": [],
+          "delayed": [],
+          "advisors": {
+            "economist": "Niche sport, limited growth.",
+            "ranger": "Archery connects body, land, spirit.",
+            "monk": "Ancient arts carry ancestral pride."
+          }
+        },
+        {
+          "text": "Split funding, host hybrid cultural festival",
+          "effects": {
+            "pillars": {
+              "economy": 4,
+              "environment": 0,
+              "culture": 8,
+              "governance": 10
+            },
+            "hidden": {
+              "social_unrest": 0,
+              "ecological_stress": 0,
+              "corruption_index": 0,
+              "foreign_influence": 1,
+              "public_trust": 8
+            }
+          },
+          "set_flags": ["hybrid_sports"],
+          "remove_flags": [],
+          "delayed": [
+            {
+              "turns": 1,
+              "effects": {
+                "pillars": { "culture": 4 },
+                "hidden": { "public_trust": 4 }
+              },
+              "message": "A festival blending e-sports and archery unites generations."
+            }
+          ],
+          "advisors": {
+            "economist": "Compromise markets both.",
+            "ranger": "Balance honors past and future.",
+            "monk": "Unity in diversity is the path."
+          }
+        }
+      ]
+    }
+  ]
+}

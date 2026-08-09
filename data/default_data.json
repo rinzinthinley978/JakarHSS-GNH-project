@@ -1,0 +1,364 @@
+{
+    "districts": {
+        "Bumthang": {
+            "region": "Central",
+            "population": 17800,
+            "description": "A spiritual heartland dotted with ancient temples, where butter lamps burn softly and buckwheat fields sway.",
+            "starting_gnh": {
+                "economy": 40,
+                "environment": 65,
+                "culture": 75,
+                "governance": 50
+            },
+            "hidden_vars": {
+                "social_unrest": 25,
+                "ecological_stress": 40,
+                "corruption_index": 20,
+                "foreign_influence": 30,
+                "public_trust": 70
+            }
+        },
+        "Chhukha": {
+            "region": "Western",
+            "population": 69000,
+            "description": "A district rich with hydropower plants, where the big river gives electricity to the whole country, but also brings many visitors and big changes.",
+            "starting_gnh": {
+                "economy": 75,
+                "environment": 20,
+                "culture": 35,
+                "governance": 40
+            },
+            "hidden_vars": {
+                "social_unrest": 70,
+                "ecological_stress": 85,
+                "corruption_index": 60,
+                "foreign_influence": 80,
+                "public_trust": 30
+            }
+        },
+        "Dagana": {
+            "region": "Southern",
+            "population": 25000,
+            "description": "A district with thick jungles and rushing rivers, where rare animals hide and life is simple.",
+            "starting_gnh": {
+                "economy": 30,
+                "environment": 55,
+                "culture": 55,
+                "governance": 35
+            },
+            "hidden_vars": {
+                "social_unrest": 40,
+                "ecological_stress": 60,
+                "corruption_index": 45,
+                "foreign_influence": 50,
+                "public_trust": 45
+            }
+        },
+        "Gasa": {
+            "region": "North-Western",
+            "population": 4000,
+            "description": "The highest district with snowy peaks and healing hot springs, where only the brave live among clouds.",
+            "starting_gnh": {
+                "economy": 15,
+                "environment": 85,
+                "culture": 70,
+                "governance": 35
+            },
+            "hidden_vars": {
+                "social_unrest": 20,
+                "ecological_stress": 30,
+                "corruption_index": 20,
+                "foreign_influence": 15,
+                "public_trust": 75
+            }
+        },
+        "Haa": {
+            "region": "Western",
+            "population": 13700,
+            "description": "A quiet, hidden valley surrounded by high mountains, where the spirits of the land are still honored.",
+            "starting_gnh": {
+                "economy": 20,
+                "environment": 75,
+                "culture": 70,
+                "governance": 45
+            },
+            "hidden_vars": {
+                "social_unrest": 45,
+                "ecological_stress": 35,
+                "corruption_index": 25,
+                "foreign_influence": 20,
+                "public_trust": 60
+            }
+        },
+        "Lhuntse": {
+            "region": "Eastern",
+            "population": 14400,
+            "description": "A hidden land of deep gorges and master weavers, where the threads of silk tell ancient stories.",
+            "starting_gnh": {
+                "economy": 15,
+                "environment": 70,
+                "culture": 75,
+                "governance": 40
+            },
+            "hidden_vars": {
+                "social_unrest": 35,
+                "ecological_stress": 30,
+                "corruption_index": 25,
+                "foreign_influence": 20,
+                "public_trust": 65
+            }
+        },
+        "Mongar": {
+            "region": "Eastern",
+            "population": 37000,
+            "description": "A district with terraced farms and a dzong built on a hilltop, a place of busy markets and green hills.",
+            "starting_gnh": {
+                "economy": 40,
+                "environment": 45,
+                "culture": 55,
+                "governance": 40
+            },
+            "hidden_vars": {
+                "social_unrest": 50,
+                "ecological_stress": 50,
+                "corruption_index": 40,
+                "foreign_influence": 35,
+                "public_trust": 45
+            }
+        },
+        "Paro": {
+            "region": "Western",
+            "population": 46000,
+            "description": "Home to the famous Tiger's Nest monastery on a cliff, this valley is where airplanes first land, mixing old stories with new travelers.",
+            "starting_gnh": {
+                "economy": 60,
+                "environment": 35,
+                "culture": 65,
+                "governance": 50
+            },
+            "hidden_vars": {
+                "social_unrest": 45,
+                "ecological_stress": 60,
+                "corruption_index": 40,
+                "foreign_influence": 55,
+                "public_trust": 50
+            }
+        },
+        "Pemagatshel": {
+            "region": "Eastern",
+            "population": 23600,
+            "description": "A district of orange orchards and quiet villages, yet the crossroads bring new ideas from across the border.",
+            "starting_gnh": {
+                "economy": 30,
+                "environment": 55,
+                "culture": 60,
+                "governance": 40
+            },
+            "hidden_vars": {
+                "social_unrest": 45,
+                "ecological_stress": 55,
+                "corruption_index": 35,
+                "foreign_influence": 50,
+                "public_trust": 50
+            }
+        },
+        "Punakha": {
+            "region": "Central",
+            "population": 28700,
+            "description": "The old winter capital with a stunning fortress at the meeting of two rivers, a place of royal weddings and sacred relics.",
+            "starting_gnh": {
+                "economy": 40,
+                "environment": 50,
+                "culture": 70,
+                "governance": 50
+            },
+            "hidden_vars": {
+                "social_unrest": 30,
+                "ecological_stress": 55,
+                "corruption_index": 25,
+                "foreign_influence": 30,
+                "public_trust": 65
+            }
+        },
+        "Samdrup Jongkhar": {
+            "region": "Eastern",
+            "population": 35000,
+            "description": "The eastern gateway to Bhutan, a lively border town where trucks, traders, and travelers mix, sometimes causing chaos.",
+            "starting_gnh": {
+                "economy": 65,
+                "environment": 20,
+                "culture": 30,
+                "governance": 25
+            },
+            "hidden_vars": {
+                "social_unrest": 80,
+                "ecological_stress": 75,
+                "corruption_index": 75,
+                "foreign_influence": 90,
+                "public_trust": 20
+            }
+        },
+        "Samtse": {
+            "region": "Southern",
+            "population": 62600,
+            "description": "A warm lowland district close to India, where many different people live and trade, but old forests are disappearing.",
+            "starting_gnh": {
+                "economy": 50,
+                "environment": 15,
+                "culture": 35,
+                "governance": 30
+            },
+            "hidden_vars": {
+                "social_unrest": 70,
+                "ecological_stress": 85,
+                "corruption_index": 65,
+                "foreign_influence": 85,
+                "public_trust": 25
+            }
+        },
+        "Sarpang": {
+            "region": "Southern",
+            "population": 46000,
+            "description": "A hot, green district on the Indian border, home to elephants and new towns growing fast.",
+            "starting_gnh": {
+                "economy": 40,
+                "environment": 30,
+                "culture": 45,
+                "governance": 35
+            },
+            "hidden_vars": {
+                "social_unrest": 55,
+                "ecological_stress": 70,
+                "corruption_index": 50,
+                "foreign_influence": 70,
+                "public_trust": 35
+            }
+        },
+        "Thimphu": {
+            "region": "Western",
+            "population": 139000,
+            "description": "The capital city bustling with life, where modern buildings sit near ancient fortresses and the king's palace.",
+            "starting_gnh": {
+                "economy": 80,
+                "environment": 10,
+                "culture": 40,
+                "governance": 55
+            },
+            "hidden_vars": {
+                "social_unrest": 85,
+                "ecological_stress": 90,
+                "corruption_index": 60,
+                "foreign_influence": 50,
+                "public_trust": 30
+            }
+        },
+        "Trashigang": {
+            "region": "Eastern",
+            "population": 45500,
+            "description": "The largest district in the east, a bustling town on a steep ridge overlooking the Gamri River, a crossroads for travelers.",
+            "starting_gnh": {
+                "economy": 40,
+                "environment": 45,
+                "culture": 55,
+                "governance": 40
+            },
+            "hidden_vars": {
+                "social_unrest": 55,
+                "ecological_stress": 60,
+                "corruption_index": 45,
+                "foreign_influence": 45,
+                "public_trust": 40
+            }
+        },
+        "Trashiyangtse": {
+            "region": "Eastern",
+            "population": 17300,
+            "description": "A peaceful valley known for its artists, where handmade paper and carved wooden cups are made with love.",
+            "starting_gnh": {
+                "economy": 20,
+                "environment": 65,
+                "culture": 65,
+                "governance": 40
+            },
+            "hidden_vars": {
+                "social_unrest": 40,
+                "ecological_stress": 35,
+                "corruption_index": 30,
+                "foreign_influence": 25,
+                "public_trust": 60
+            }
+        },
+        "Trongsa": {
+            "region": "Central",
+            "population": 20000,
+            "description": "The ancient watchtower of the kingdom, a mighty dzong that tells stories of kings and warriors.",
+            "starting_gnh": {
+                "economy": 25,
+                "environment": 55,
+                "culture": 70,
+                "governance": 40
+            },
+            "hidden_vars": {
+                "social_unrest": 35,
+                "ecological_stress": 40,
+                "corruption_index": 30,
+                "foreign_influence": 25,
+                "public_trust": 60
+            }
+        },
+        "Tsirang": {
+            "region": "Southern",
+            "population": 22400,
+            "description": "Gentle hills full of orange trees, where farming is the main life, but the weather is changing.",
+            "starting_gnh": {
+                "economy": 30,
+                "environment": 40,
+                "culture": 50,
+                "governance": 35
+            },
+            "hidden_vars": {
+                "social_unrest": 40,
+                "ecological_stress": 65,
+                "corruption_index": 40,
+                "foreign_influence": 55,
+                "public_trust": 45
+            }
+        },
+        "Wangdue Phodrang": {
+            "region": "Central",
+            "population": 42000,
+            "description": "Famous for its big dzong on a ridge and the beautiful Phobjikha valley where black-necked cranes fly in.",
+            "starting_gnh": {
+                "economy": 35,
+                "environment": 55,
+                "culture": 60,
+                "governance": 45
+            },
+            "hidden_vars": {
+                "social_unrest": 40,
+                "ecological_stress": 55,
+                "corruption_index": 35,
+                "foreign_influence": 30,
+                "public_trust": 55
+            }
+        },
+        "Zhemgang": {
+            "region": "Central",
+            "population": 17800,
+            "description": "A wild and remote land of deep forests, where tigers still roam freely under a blanket of stars.",
+            "starting_gnh": {
+                "economy": 15,
+                "environment": 65,
+                "culture": 65,
+                "governance": 30
+            },
+            "hidden_vars": {
+                "social_unrest": 45,
+                "ecological_stress": 50,
+                "corruption_index": 35,
+                "foreign_influence": 20,
+                "public_trust": 50
+            }
+        }
+    }
+}

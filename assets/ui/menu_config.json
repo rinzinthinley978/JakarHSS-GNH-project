@@ -1,0 +1,32 @@
+{
+  "theme": {
+    "text_color": [255, 253, 208],
+    "hover_color": [255, 255, 255]
+  },
+  "buttons": [
+    {
+      "id": "start_game",
+      "text": "START GAME",
+      "width": 300,
+      "height": 100,
+      "x": 20,
+      "y": 180
+    },
+    {
+      "id": "reset",
+      "text": "Reset Data",
+      "width": 300,
+      "height": 100,
+      "x": 20,
+      "y": 206
+    },
+    {
+      "id": "quit",
+      "text": "EXIT GAME",
+      "width": 300,
+      "height": 100,
+      "x": 20,
+      "y": 232
+    }
+  ]
+}
