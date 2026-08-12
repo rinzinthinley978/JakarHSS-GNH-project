@@ -32,7 +32,7 @@ class DataLoader:
             (self.WIDTH, self.HEIGHT),
             pygame.FULLSCREEN | pygame.RESIZABLE
         )
-        self.title = "GNH"
+        self.title = "Gaki Pelzom"
         pygame.display.set_caption(self.title)
 
         # Scale factor attributes
