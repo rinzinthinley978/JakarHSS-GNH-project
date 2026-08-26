@@ -9,8 +9,21 @@ import matplotlib.backends.backend_agg as agg
 
 
 class GameScene:
+    """
+    Manages the visual representation of a game scene, including UI panels,
+    scenario display, counters, and end-of-game summary.
+    """
 
     def __init__(self, data_loader_instance, panel_instance, heading_font_instance, body_font_instance):
+        """
+        Initialize the game scene with shared resources.
+
+        Args:
+            data_loader_instance: Object providing screen, virtual dimensions, and mouse position.
+            panel_instance: The main panel surface to display information.
+            heading_font_instance: Font object for heading text.
+            body_font_instance: Font object for body text.
+        """
         self.data_loader = data_loader_instance
         self.mousePos = self.data_loader.mousePos
         self.panel = panel_instance
@@ -18,16 +31,18 @@ class GameScene:
         self.body_font = body_font_instance
         self.screen = self.data_loader.screen
 
-        self.width = self.data_loader.WIDTH
-        self.height = self.data_loader.HEIGHT
+        self.width = self.data_loader.VIRTUAL_WIDTH
+        self.height = self.data_loader.VIRTUAL_HEIGHT
 
         quadrant_w = self.width // 2
         quadrant_h = self.height // 2
         padding = 20
 
+        # Define the two main zones: top-left for info panel, top-right for scenario
         self.zone_top_left = pygame.Rect(0, 0, quadrant_w, quadrant_h)
         self.zone_top_right = pygame.Rect(self.width // 2 - padding, padding, self.width - quadrant_w, quadrant_h)
 
+        # Load or create the info panel background
         try:
             info_panel_surface = pygame.image.load('assets/ui/panel.png').convert_alpha()
         except Exception:
@@ -40,19 +55,24 @@ class GameScene:
         self.max_turns = 15
         self.choice_buttons = []
 
+        # Animation timings
         self.initial_spin_time = 3.0
         self.update_spin_time = 1.0
         self.flip_speed = 0.04
         self.sound_rhythm = 0.05
 
+        # State for counter animation
         self.counters = {}
         self.last_sound_time = 0.0
 
+        # Click cooldown to prevent accidental double clicks
         self.click_cooldown = 1.0
         self.last_click_time = 0.0
 
+        # Lock scenario until counters finish spinning
         self.scenario_locked = True
 
+        # Ghost state (visual feedback after a choice)
         self.ghost_active = False
         self.ghost_start_time = 0.0
         self.ghost_duration = 2.0
@@ -60,6 +80,7 @@ class GameScene:
         self.ghost_feedback_text = ""
         self.ghost_scenario_title = ""
 
+        # Colors for different pillars
         self.pillar_colors = {
             'economy': '#E74C3C',
             'environment': '#2ECC71',
@@ -70,6 +91,7 @@ class GameScene:
 
         self.option_colors = []
 
+        # Generate sounds
         self.click_sound = self.create_sound(freq_start=1800, freq_end=320, duration=0.025, volume=0.25)
         self.lock_sound = self.create_sound(freq_start=400, freq_end=80, duration=0.05, volume=0.35)
 
@@ -80,20 +102,22 @@ class GameScene:
         self.end_sound_played = False
         self.end_sound.set_volume(0.5)
 
+        # Load back button
         try:
             back_raw = pygame.image.load('assets/ui/back_button.png').convert_alpha()
         except Exception:
             back_raw = pygame.Surface((50, 50), pygame.SRCALPHA)
             back_raw.fill((200, 50, 50))
         self.back_button = pygame.transform.scale(back_raw, (50, 50))
-
         self.back_rect = self.back_button.get_rect(topleft=(10, 10))
 
+        # Cached shuffled options for the current scenario
         self._shuffled_options = None
         self._last_scenario_id = None
         self._ghost_shuffled_options = None
 
     def reset(self):
+        """Reset the scene's state, typically called when starting a new game."""
         self.counters = {}
         self.last_sound_time = 0.0
         self.last_click_time = 0.0
@@ -111,10 +135,23 @@ class GameScene:
         self.end_sound_played = False
 
     def create_sound(self, freq_start, freq_end, duration, volume):
+        """
+        Generate a simple sound effect using numpy and pygame.mixer.Sound.
+
+        Args:
+            freq_start (float): Starting frequency in Hz.
+            freq_end (float): Ending frequency in Hz.
+            duration (float): Sound duration in seconds.
+            volume (float): Volume level between 0 and 1.
+
+        Returns:
+            pygame.mixer.Sound: A Sound object ready to play.
+        """
         sample_rate = 44100
         total_samples = int(sample_rate * duration)
         t = np.linspace(0, duration, total_samples, False)
         frequencies = np.linspace(freq_start, freq_end, total_samples)
+        # Exponential decay envelope
         wave = np.sin(2 * np.pi * frequencies * t) * np.exp(-t * (100 / duration))
         stereo_wave = np.vstack((wave, wave)).T
         max_val = np.max(np.abs(stereo_wave))
@@ -124,6 +161,17 @@ class GameScene:
         return pygame.mixer.Sound(buffer=audio_bytes)
 
     def render_matplotlib_graph(self, history, width=800, height=450):
+        """
+        Render a matplotlib graph of pillar history and return a pygame surface.
+
+        Args:
+            history (list): List of dictionaries containing turn data.
+            width (int): Desired width of the surface.
+            height (int): Desired height of the surface.
+
+        Returns:
+            pygame.Surface: Surface with the plotted graph.
+        """
         dpi = 100
         fig_w = width / dpi
         fig_h = height / dpi
@@ -180,21 +228,31 @@ class GameScene:
             plt.close(fig)
 
     def draw_end_screen(self, gameState):
+        """
+        Draw the final summary screen showing final GNH, grades, pillar scores, and a graph.
+
+        Args:
+            gameState: The game state object containing pillars and history.
+        """
         self.screen.fill('#fff0f1')
 
+        # Play end sound only once
         if not self.end_sound_played:
             self.end_sound.play()
             self.end_sound_played = True
 
+        # Title
         title_surf = self.heading_font.Font("5-Year Report", 'black', 60)
         title_rect = title_surf.get_rect(center=(self.width // 2, 50))
         self.screen.blit(title_surf, title_rect)
 
+        # Final GNH score
         final_gnh = gameState.get_gnh()
         score_surf = self.body_font.Font(f"Final GNH Score: {final_gnh:.1f} / 100", '#1B7A3F', 50)
         score_rect = score_surf.get_rect(center=(self.width // 2, 120))
         self.screen.blit(score_surf, score_rect)
 
+        # Grade based on final score
         if final_gnh >= 80:
             grade, color = "Excellent! A model of happiness.", (60, 180, 80)
         elif final_gnh >= 60:
@@ -208,6 +266,7 @@ class GameScene:
         grade_rect = grade_surf.get_rect(center=(self.width // 2, 175))
         self.screen.blit(grade_surf, grade_rect)
 
+        # Display pillar scores on the right side
         pillars = gameState.pillars
         pillar_labels = {"economy": "Economy", "environment": "Environment", "culture": "Culture", "governance": "Governance"}
         pillar_colors = {"economy": (220, 60, 60), "environment": (60, 180, 80), "culture": (220, 160, 20), "governance": (60, 120, 220)}
@@ -226,6 +285,7 @@ class GameScene:
             self.screen.blit(text_surf, text_rect)
             y_offset += font_size + 12
 
+        # Draw the history graph on the left side
         history = getattr(gameState, 'history', [])
         graph_w = self.width - panel_w - 100
         graph_h = self.height - 220
@@ -233,9 +293,16 @@ class GameScene:
         graph_rect = graph_surf.get_rect(center=(graph_w // 2 + 30, self.height // 2 + 40))
         self.screen.blit(graph_surf, graph_rect)
 
+        # Back button
         self.screen.blit(self.back_button, self.back_rect)
 
     def display_info(self, game_state_instance):
+        """
+        Display current pillar scores in the top-left panel with spinning number animation.
+
+        Args:
+            game_state_instance: The game state object containing pillar values.
+        """
         self.screen.blit(self.info_panel, self.info_panel_rect)
 
         pillars_info = {
@@ -255,6 +322,7 @@ class GameScene:
         for key, value in pillars_info.items():
             target_number = int(value)
 
+            # Initialize counter if not present
             if key not in self.counters:
                 self.counters[key] = {
                     "target": target_number,
@@ -264,7 +332,7 @@ class GameScene:
                     "spin_duration": self.initial_spin_time,
                     "is_spinning": True
                 }
-
+            # Update counter if target changed and not currently spinning
             elif self.counters[key]["target"] != target_number and not self.counters[key]["is_spinning"]:
                 self.counters[key]["target"] = target_number
                 self.counters[key]["start_time"] = current_time
@@ -278,11 +346,12 @@ class GameScene:
                 time_elapsed = current_time - counter["start_time"]
                 all_spinning_done = False
 
+                # Finish spinning
                 if time_elapsed >= counter["spin_duration"]:
                     counter["display_text"] = f"{counter['target']:03d}"
                     counter["is_spinning"] = False
                     self.lock_sound.play()
-
+                # Flip numbers rapidly during spin
                 elif current_time - counter["last_flip_time"] >= self.flip_speed:
                     counter["last_flip_time"] = current_time
                     counter["display_text"] = f"{random.randint(0, 100):03d}"
@@ -295,16 +364,26 @@ class GameScene:
 
             y_offset += line_height
 
+        # Play ticking sound periodically during spin
         if should_play_click and (current_time - self.last_sound_time >= self.sound_rhythm):
             self.click_sound.play()
             self.last_sound_time = current_time
 
+        # Unlock scenario once all counters have finished
         if all_spinning_done and self.scenario_locked:
             self.scenario_locked = False
 
     def draw_scenario(self, scenario, hover_index=None):
+        """
+        Draw the current scenario with its options and advisor text on hover.
+
+        Args:
+            scenario (dict): The scenario data containing title, description, options.
+            hover_index (int, optional): Index of the hovered option, if any.
+        """
         self.choice_buttons = []
 
+        # If ghost overlay is active, draw that instead
         current_time = pygame.time.get_ticks() / 1000.0
         if self.ghost_active:
             ghost_elapsed = current_time - self.ghost_start_time
@@ -321,9 +400,11 @@ class GameScene:
         title = scenario.get('title', 'Scenario')
         description = scenario.get('description', '')
 
+        # Title text (top-right area)
         title_text = self.heading_font.wrap_text(title, 'black', 45, self.width // 2 - 40)
         title_text_rect = title_text.get_rect(midtop=self.zone_top_right.midtop)
 
+        # Shuffle options once per scenario
         options = scenario.get('options', [])
         if self._last_scenario_id != scenario.get('id') or self._shuffled_options is None:
             self._shuffled_options = options.copy()
@@ -331,12 +412,14 @@ class GameScene:
             self._last_scenario_id = scenario.get('id')
         shuffled_options = self._shuffled_options
 
+        # Layout options at bottom half
         self.opts_num = max(len(shuffled_options), 1)
         opt_width = self.width // self.opts_num
         box_w = opt_width - 20
         box_h = self.height // 2 - 20
         x_shift = 0
 
+        # Assign colors to options if needed
         if len(self.option_colors) != len(shuffled_options):
             palette = [(220, 60, 60), (60, 120, 220), (60, 180, 80)]
             self.option_colors = random.sample(palette, min(len(palette), len(shuffled_options)))
@@ -364,6 +447,7 @@ class GameScene:
 
         self.screen.blit(title_text, title_text_rect)
 
+        # Show advisor quotes when hovering over an option
         if hover_index is not None and hover_index < len(shuffled_options):
             advisors = shuffled_options[hover_index].get('advisors')
             if advisors:
@@ -376,11 +460,18 @@ class GameScene:
                     self.screen.blit(advice_surf, advice_rect)
                     advice_y += advice_surf.get_height() + 10
         else:
+            # Show scenario description when no option hovered
             story_text = self.body_font.wrap_text(description, 'black', 30, self.zone_top_right.width - 40)
             story_rect = story_text.get_rect(centerx=self.zone_top_right.centerx, top=title_text_rect.bottom + 20)
             self.screen.blit(story_text, story_rect)
 
     def _draw_ghost_state(self, scenario):
+        """
+        Draw a temporary overlay showing the selected option highlighted and feedback text.
+
+        Args:
+            scenario (dict): The scenario data (may be None if not needed).
+        """
         current_time = pygame.time.get_ticks() / 1000.0
         ghost_elapsed = current_time - self.ghost_start_time
         alpha = max(0, 255 - int((ghost_elapsed / self.ghost_duration) * 200))
@@ -399,6 +490,7 @@ class GameScene:
         for i, opts in enumerate(options):
             box_rect = pygame.Rect(x_shift + 10, self.height // 2 + 10, box_w, box_h)
             if i == self.ghost_selected_index:
+                # Highlight selected option with fading white overlay
                 ghost_surf = pygame.Surface((box_w, box_h), pygame.SRCALPHA)
                 ghost_surf.fill((255, 255, 255, alpha))
                 pygame.draw.rect(self.screen, (180, 180, 180), box_rect, border_radius=20)
@@ -411,12 +503,21 @@ class GameScene:
             self.screen.blit(opts_text, text_rect)
             x_shift += opt_width
 
+        # Display feedback message in center
         if self.ghost_feedback_text:
             feedback_surf = self.body_font.wrap_text(self.ghost_feedback_text, '#1B7A3F', 35, self.zone_top_right.width - 40)
             feedback_rect = feedback_surf.get_rect(center=self.zone_top_right.center)
             self.screen.blit(feedback_surf, feedback_rect)
 
     def trigger_ghost(self, selected_option, scenario_title, shuffled_options=None):
+        """
+        Activate the ghost overlay after a choice is made.
+
+        Args:
+            selected_option (int): Index of the selected option in the shuffled list.
+            scenario_title (str): Title of the scenario (can be empty).
+            shuffled_options (list, optional): List of options as displayed.
+        """
         self.ghost_active = True
         self.ghost_start_time = pygame.time.get_ticks() / 1000.0
         self.ghost_selected_index = selected_option
@@ -425,13 +526,25 @@ class GameScene:
         self.ghost_feedback_text = "Decision recorded. Processing consequences..."
 
     def set_ghost_feedback(self, text):
+        """Update the feedback text shown during ghost overlay."""
         self.ghost_feedback_text = text
 
     def handle_choice(self, event, mousePos):
+        """
+        Handle mouse click on a scenario option.
+
+        Args:
+            event: Pygame event.
+            mousePos: Tuple (x, y) of mouse position in virtual coordinates.
+
+        Returns:
+            The selected option data (dict) if clicked, else None.
+        """
         if self.ghost_active or self.scenario_locked:
             return None
 
         current_time = pygame.time.get_ticks() / 1000.0
+        # Enforce cooldown
         if current_time - self.last_click_time < self.click_cooldown:
             return None
 
@@ -447,7 +560,16 @@ class GameScene:
         return None
 
     def handle_hover(self, mousePos=None):
-        current_pos = pygame.mouse.get_pos()
+        """
+        Return index of hovered option for advisor display.
+
+        Args:
+            mousePos: Optional tuple; if None, uses virtual mouse from data_loader.
+
+        Returns:
+            Index of hovered option, or None.
+        """
+        current_pos = self.data_loader.get_virtual_mouse_pos()
         if not hasattr(self, 'choice_buttons') or not self.choice_buttons:
             return None
         for i, button in enumerate(self.choice_buttons):

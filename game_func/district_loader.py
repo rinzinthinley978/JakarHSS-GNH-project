@@ -11,7 +11,7 @@ class MapScreen:
         self.in_boundary = False
 
         self.text = self.font.Font("----SELECT A DISTRICT----", '#82A118', int(0.0651 * self.dl.HEIGHT))
-        self.text_rect = self.text.get_rect(center=(self.dl.WIDTH // 2, int(0.92448 * self.dl.HEIGHT)))
+        self.text_rect = self.text.get_rect(center=(self.dl.VIRTUAL_WIDTH // 2, int(0.92448 * self.dl.VIRTUAL_HEIGHT)))
 
         # Cache optimized district structures (including Shapely bounds)
         self.district_cache = []

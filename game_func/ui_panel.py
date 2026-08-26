@@ -6,7 +6,7 @@ class Panel:
         self.dl = data_loader_instance
         self.heading = heading_font_instance
         self.body = body_font_instance
-        self.screen = self.dl.screen
+        self.screen = self.dl.virtual_surface
         self.padding = 10
 
         # Load UI assets
@@ -24,8 +24,8 @@ class Panel:
             self.button_surface.fill((100, 100, 100))
             self.back_button_surface.fill((200, 50, 50))
 
-        self.width = self.dl.WIDTH
-        self.height = self.dl.HEIGHT
+        self.width = self.dl.VIRTUAL_WIDTH
+        self.height = self.dl.VIRTUAL_HEIGHT
 
         self.margin_x = self.padding * (self.width / 1366)
         self.margin_y = self.padding * (self.height / 768)
@@ -52,7 +52,7 @@ class Panel:
         self.info_panel_rect: pygame.Rect | None = None
 
     def _rebuild_panel_cache(self, district_name):
-        """Rebuilds text lines and rescales the panel surface only when the district selection changes."""
+        #Rebuilds text lines and rescales the panel surface only when the district selection changes.
         district_data = self.dl.get_district_data()
         if not district_data:
             self.cached_lines = []
@@ -139,10 +139,11 @@ class Panel:
 
     def handle_events(self, event):
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-            if self.back_rect.collidepoint(event.pos):
+            # Convert event.pos to virtual coordinates
+            virt_x, virt_y = self.dl.get_virtual_mouse_pos()
+            # Then use virt_x, virt_y for hit-testing instead of event.pos
+            if self.back_rect.collidepoint((virt_x, virt_y)):
                 return "back"
-
-            if self.dl.selected_district is not None and self.button_rect.collidepoint(event.pos):
+            if self.dl.selected_district is not None and self.button_rect.collidepoint((virt_x, virt_y)):
                 return "begin"
-
         return None

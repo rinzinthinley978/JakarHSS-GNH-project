@@ -2,6 +2,7 @@ import sys
 import time
 import pygame
 
+# Import game modules
 from game_func.district_loader import MapScreen
 from game_func.districts_process import DistProc
 from game_func.loading import loadingScreen
@@ -14,11 +15,12 @@ from game_func.scenario_engine import ScenarioEngine
 from game_func.crisis_engine import CrisesEngine
 from game_func.main_menu import MainMenu
 
-# Initialise Pygame and its mixer
+# Initialize Pygame and its audio subsystem (mixer)
 pygame.init()
 pygame.mixer.init()
 
-# Core systems: data, fonts, UI components
+# --- Core Systems Initialization ---
+# Create reusable systems: data loader, fonts, UI panels, and game engines
 data_loader = DataLoader()
 heading_font = FontManager('assets/ui/pixel_heading.ttf')
 body_font = FontManager('assets/ui/pixel_body.ttf')
@@ -33,16 +35,19 @@ scenario_engine = ScenarioEngine()
 crisis_engine = CrisesEngine()
 main_menu = MainMenu(data_loader, heading_font, body_font)
 
-# Background music (volume 0 initially, can be adjusted later)
-pygame.mixer.music.play(-1)
+# --- Audio Setup ---
+# Set background music and volume
+pygame.mixer.music.play(-1)  # play indefinitely
 pygame.mixer.music.set_volume(0.5)
 
-# Window settings
+# --- Window and Cursor Setup ---
+# Configure window title, icon, and custom mouse cursor
 pygame.display.set_icon(data_loader.game_icon)
 pygame.display.set_caption(data_loader.title)
 pygame.mouse.set_cursor(data_loader.cursor_sprite)
 
-# Game state variables
+# --- Game State Variables ---
+# Track current state, user interactions, and pending actions
 running = True
 current_state = "Loading"
 hover_index = None
@@ -54,16 +59,16 @@ is_current_crisis = False
 game_saved = False
 menu_action = None
 
-time.sleep(0.5)
+time.sleep(0.5)  # brief delay to ensure assets are ready
 
 def reset_game_session():
-    #Resets game state for a new session.
+    # Reset all game state to start a new session
     global current_scenario, pending_choice, pending_scenario, game_saved, is_current_crisis, pending_was_crisis
-    data_loader.reload_data()
-    game_state.reset()
-    game_scene.reset()
-    scenario_engine.clear_lock()
-    crisis_engine.reset()
+    data_loader.reload_data()         # reload any dynamic game data
+    game_state.reset()                # reset game state tracking
+    game_scene.reset()                # reset scene components
+    scenario_engine.clear_lock()      # clear scenario locks
+    crisis_engine.reset()             # reset crisis tracking
     data_loader.selected_district = None
     current_scenario = None
     pending_choice = None
@@ -73,7 +78,7 @@ def reset_game_session():
     is_current_crisis = False
 
 def construct_feedback_message(choice_effect):
-    # Build a user‑friendly message from the choice consequences
+    # Generate a user-friendly summary of a choice's effects
     effects = choice_effect.get('effects', choice_effect)
     delayed = choice_effect.get('delayed', [])
 
@@ -81,7 +86,7 @@ def construct_feedback_message(choice_effect):
     if delayed and len(delayed) > 0 and delayed[0].get('message'):
         return delayed[0]['message']
 
-    # Otherwise, summarise pillar changes
+    # Otherwise summarize pillar changes
     pillars = effects.get('pillars', {})
     positive = [name.capitalize() for name, magnitude in pillars.items() if magnitude > 0]
     negative = [name.capitalize() for name, magnitude in pillars.items() if magnitude < 0]
@@ -94,12 +99,14 @@ def construct_feedback_message(choice_effect):
 
     return '. '.join(parts) + '.' if parts else "The consequences of your decision will unfold in time..."
 
-# Main game loop
+# --- Main Game Loop ---
+# Handles events, updates, rendering, and state transitions
 while running:
-    data_loader.mousePos = pygame.mouse.get_pos()
+    # Scale fix: convert real mouse position to virtual coordinates
+    data_loader.mousePos = data_loader.get_virtual_mouse_pos()
     delta_time = data_loader.clock.tick(data_loader.frames)
 
-    # ---------- Event handling ----------
+    # ---------- Event Handling ----------
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -166,11 +173,11 @@ while running:
         # End Screen events
         elif current_state == 'End Screen':
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                if game_scene.back_rect.collidepoint(event.pos):
+                if game_scene.back_rect.collidepoint(data_loader.mousePos):
                     reset_game_session()
                     current_state = 'Map'
 
-    # ---------- Game logic updates ----------
+    # ---------- Game Logic Updates ----------
     # Apply pending choice after ghost phase finishes
     if pending_choice and not game_scene.ghost_active:
         game_state.apply_choice(pending_choice)
@@ -206,7 +213,7 @@ while running:
         data_loader.save_district_data(data_loader.selected_district, final_state)
         game_saved = True
 
-    # ---------- State transitions ----------
+    # ---------- State Transitions ----------
     if current_state == "Loading":
         loading_screen.do_work(delta_time)
         if loading_screen.loading_finished:
@@ -225,30 +232,33 @@ while running:
         map_screen.check_hover()
 
     # ---------- Rendering ----------
-    data_loader.screen.fill('#fff0f1')
-
-    if hasattr(data_loader, 'virtual_surface') and data_loader.virtual_surface:
-        data_loader.virtual_surface.fill((0, 0, 0, 0))
+    # Always fill the virtual surface with the background color
+    data_loader.virtual_surface.fill('#ffffff')
 
     if current_state == "Loading":
         loading_screen.check_loading()
 
     elif current_state == "Menu":
-        main_menu.draw(data_loader.screen)
+        main_menu.draw(data_loader.virtual_surface)
 
     elif current_state == 'Map':
-        map_screen.draw(data_loader.screen)
+        map_screen.draw(data_loader.virtual_surface)
+        info_panel.screen = data_loader.virtual_surface
         info_panel.draw_panel()
 
     elif current_state == 'Game Scene':
-        hover_index = game_scene.handle_hover()
+        game_scene.screen = data_loader.virtual_surface
+        hover_index = game_scene.handle_hover(data_loader.mousePos)
         game_scene.display_info(game_state)
         game_scene.draw_scenario(current_scenario, hover_index)
 
     elif current_state == 'End Screen':
+        game_scene.screen = data_loader.virtual_surface
         game_scene.draw_end_screen(game_state)
 
-    # Show FPS and update display
+    # Always scale the virtual surface and blit it to the real screen
+    data_loader.render_frame()
+
     data_loader.show_fps(0)
     pygame.display.flip()
 

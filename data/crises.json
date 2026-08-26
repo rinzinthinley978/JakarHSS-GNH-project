@@ -3,8 +3,8 @@
     {
       "id": "economic_collapse",
       "flag": "eco_collapse",
-      "title": "Economic Collapse",
-      "description": "Businesses are failing, unemployment is soaring, and basic goods are becoming scarce. The district's economy has hit rock bottom.",
+      "title": "Money Problems Get Very Bad",
+      "description": "Shops are closing, many people can't find work, and it's getting hard to buy food and other basic things. The area's money situation has hit rock bottom.",
       "trigger": {
         "type": "pillar",
         "conditions": {
@@ -13,27 +13,27 @@
       },
       "options": [
         {
-          "text": "Implement austerity measures",
+          "text": "Cut spending and save money",
           "effects": {
             "pillars": { "economy": 8, "environment": -4, "culture": -4, "governance": -3 },
             "hidden": { "social_unrest": 6, "ecological_stress": 0, "corruption_index": 2, "foreign_influence": 0, "public_trust": -8 }
           },
           "advisors": {
-            "economist": "Tighten the belt. Pain now prevents total ruin later.",
-            "ranger": "Cuts to green programs will scar the land deeper.",
-            "monk": "Shared suffering can build compassion, or break it."
+            "economist": "We need to spend less. It hurts now but stops things getting worse.",
+            "ranger": "Cutting green projects will hurt the land even more.",
+            "monk": "Sharing the hard times can bring people together, or tear them apart."
           }
         },
         {
-          "text": "Launch public works programs",
+          "text": "Start big community work projects",
           "effects": {
             "pillars": { "economy": 4, "environment": -8, "culture": 4, "governance": 4 },
             "hidden": { "social_unrest": -4, "ecological_stress": 2, "corruption_index": 4, "foreign_influence": 0, "public_trust": 4 }
           },
           "advisors": {
-            "economist": "Stimulus puts coins in empty pockets.",
-            "ranger": "Bulldozers for jobs still fell ancient trees.",
-            "monk": "Work that unites hands can heal hearts."
+            "economist": "Putting people to work puts money in their hands.",
+            "ranger": "Machines for jobs will still knock down old trees.",
+            "monk": "Working together can help heal people's hearts."
           }
         }
       ]
@@ -41,8 +41,8 @@
     {
       "id": "cultural_erosion",
       "flag": "culture_erosion",
-      "title": "Cultural Erosion",
-      "description": "Traditional practices are being forgotten, languages are disappearing, and the youth are abandoning ancestral values.",
+      "title": "Losing Our Ways of Life",
+      "description": "Old traditions are being forgotten, languages are disappearing, and young people are moving away from the values of their ancestors.",
       "trigger": {
         "type": "pillar",
         "conditions": {
@@ -51,27 +51,27 @@
       },
       "options": [
         {
-          "text": "Mandate cultural education in schools",
+          "text": "Make schools teach our culture",
           "effects": {
             "pillars": { "economy": -4, "environment": 0, "culture": 12, "governance": 4 },
             "hidden": { "social_unrest": 0, "ecological_stress": 0, "corruption_index": 0, "foreign_influence": -8, "public_trust": 4 }
           },
           "advisors": {
-            "economist": "Classroom hours cost productive labor.",
-            "ranger": "Names of plants and animals live in old words.",
-            "monk": "Wisdom must be planted young to grow deep."
+            "economist": "Time spent in classes is time not spent working.",
+            "ranger": "The names of plants and animals live in old words.",
+            "monk": "We must plant wisdom early so it grows deep."
           }
         },
         {
-          "text": "Subsidize traditional artisans and performers",
+          "text": "Help traditional craft makers and performers",
           "effects": {
             "pillars": { "economy": -8, "environment": 4, "culture": 8, "governance": 0 },
             "hidden": { "social_unrest": -4, "ecological_stress": 0, "corruption_index": 2, "foreign_influence": 0, "public_trust": 4 }
           },
           "advisors": {
-            "economist": "Subsidies drain the treasury.",
-            "ranger": "Natural dyes and woven reeds honor the earth.",
-            "monk": "The hand that crafts with devotion holds the past."
+            "economist": "Paying for this will drain our money.",
+            "ranger": "Natural dyes and woven reeds are good for the earth.",
+            "monk": "Making things with care keeps our past alive."
           }
         }
       ]
@@ -79,8 +79,8 @@
     {
       "id": "governance_crisis",
       "flag": "gov_crisis",
-      "title": "Governance Crisis",
-      "description": "The local administration is paralyzed by corruption, inefficiency, and a lack of public confidence.",
+      "title": "Problems with How We're Run",
+      "description": "Local leaders are seen as dishonest and slow, and people have lost faith in them.",
       "trigger": {
         "type": "pillar",
         "conditions": {
@@ -89,27 +89,27 @@
       },
       "options": [
         {
-          "text": "Purge corrupt officials",
+          "text": "Fire dishonest officials",
           "effects": {
             "pillars": { "economy": -4, "environment": 0, "culture": -4, "governance": 14 },
             "hidden": { "social_unrest": -4, "ecological_stress": 0, "corruption_index": -14, "foreign_influence": 0, "public_trust": 8 }
           },
           "advisors": {
-            "economist": "Purge creates vacancies and uncertainty.",
-            "ranger": "A clean stream runs clear after the flood.",
+            "economist": "Firing people creates empty seats and worry.",
+            "ranger": "A clean stream runs clear after a flood.",
             "monk": "Cutting the rotten branch saves the tree."
           }
         },
         {
-          "text": "Decentralize decision-making",
+          "text": "Let villages make more of their own choices",
           "effects": {
             "pillars": { "economy": 4, "environment": 4, "culture": 0, "governance": 4 },
             "hidden": { "social_unrest": 0, "ecological_stress": 0, "corruption_index": -4, "foreign_influence": 4, "public_trust": 4 }
           },
           "advisors": {
-            "economist": "Local markets know local needs.",
+            "economist": "Local people know what they need.",
             "ranger": "Villages protect their own forests best.",
-            "monk": "Trust given to many hands builds a stronger roof."
+            "monk": "Sharing trust with many builds a stronger home."
           }
         }
       ]
@@ -117,8 +117,8 @@
     {
       "id": "social_unrest_crisis",
       "flag": "social_unrest_crisis",
-      "title": "Rising Social Unrest",
-      "description": "Protests are turning violent, and the streets are filled with anger. The people demand change, but chaos is spreading.",
+      "title": "People Are Angry and Fighting",
+      "description": "Protests are turning into fights, and the streets are full of anger. People are demanding change, but chaos is spreading.",
       "trigger": {
         "type": "hidden",
         "conditions": {
@@ -127,27 +127,27 @@
       },
       "options": [
         {
-          "text": "Negotiate with protest leaders",
+          "text": "Talk with protest leaders",
           "effects": {
             "pillars": { "economy": -2, "environment": 0, "culture": 4, "governance": 4 },
             "hidden": { "social_unrest": -14, "ecological_stress": 0, "corruption_index": 0, "foreign_influence": -4, "public_trust": 8 }
           },
           "advisors": {
-            "economist": "Dialogue is cheaper than broken windows.",
-            "ranger": "Peaceful valleys allow seeds to grow.",
+            "economist": "Talking costs less than fixing broken windows.",
+            "ranger": "Peace in the valleys lets seeds grow.",
             "monk": "Listening is the first step to understanding."
           }
         },
         {
-          "text": "Crack down with force",
+          "text": "Use force to stop them",
           "effects": {
             "pillars": { "economy": -8, "environment": 0, "culture": 0, "governance": -8 },
             "hidden": { "social_unrest": -4, "ecological_stress": 0, "corruption_index": 4, "foreign_influence": 0, "public_trust": -14 }
           },
           "advisors": {
-            "economist": "Order must exist before profit.",
-            "ranger": "Violence shatters the harmony of the wild.",
-            "monk": "A fist cannot grasp the truth."
+            "economist": "We need order before we can make money.",
+            "ranger": "Violence hurts the peace of the wild.",
+            "monk": "A fist cannot hold the truth."
           }
         }
       ]
@@ -155,8 +155,8 @@
     {
       "id": "ecological_stress_crisis",
       "flag": "eco_stress_crisis",
-      "title": "Environmental Catastrophe",
-      "description": "Deforestation, pollution, and climate change have pushed the ecosystem to the brink. Floods and droughts are becoming frequent.",
+      "title": "Nature Is in Big Trouble",
+      "description": "Cutting too many trees, pollution, and changing weather are pushing nature to the breaking point. Floods and droughts are happening more often.",
       "trigger": {
         "type": "hidden",
         "conditions": {
@@ -165,19 +165,19 @@
       },
       "options": [
         {
-          "text": "Enforce strict environmental regulations",
+          "text": "Make tough rules to protect nature",
           "effects": {
             "pillars": { "economy": -8, "environment": 14, "culture": 0, "governance": 4 },
             "hidden": { "social_unrest": 2, "ecological_stress": -14, "corruption_index": 0, "foreign_influence": -4, "public_trust": 0 }
           },
           "advisors": {
-            "economist": "Regulation strangles enterprise.",
-            "ranger": "Finally, the forest gets a shield.",
-            "monk": "Protecting life is the highest duty."
+            "economist": "Rules hold back business.",
+            "ranger": "Finally, the forest gets protection.",
+            "monk": "Taking care of life is our most important duty."
           }
         },
         {
-          "text": "Invest in green technology and reforestation",
+          "text": "Spend on green projects and planting trees",
           "effects": {
             "pillars": { "economy": 4, "environment": 10, "culture": 4, "governance": 0 },
             "hidden": { "social_unrest": 0, "ecological_stress": -10, "corruption_index": 0, "foreign_influence": 0, "public_trust": 4 }
@@ -193,8 +193,8 @@
     {
       "id": "corruption_scandal",
       "flag": "corruption_scandal",
-      "title": "Corruption Scandal Erupts",
-      "description": "A massive corruption ring has been exposed, implicating officials and business leaders. Trust in institutions is shattered.",
+      "title": "Big Cheating Scandal Revealed",
+      "description": "A huge cheating ring has been found, with officials and business people involved. Trust in leaders is broken.",
       "trigger": {
         "type": "hidden",
         "conditions": {
@@ -203,27 +203,27 @@
       },
       "options": [
         {
-          "text": "Prosecute all involved",
+          "text": "Take all of them to court",
           "effects": {
             "pillars": { "economy": -4, "environment": 0, "culture": 0, "governance": 8 },
             "hidden": { "social_unrest": -4, "ecological_stress": 0, "corruption_index": -18, "foreign_influence": 0, "public_trust": 8 }
           },
           "advisors": {
-            "economist": "Trials freeze investment.",
-            "ranger": "Justice, like rain, clears the air.",
-            "monk": "Karma must be met, not hidden."
+            "economist": "Trials make people scared to invest.",
+            "ranger": "Justice, like rain, cleans the air.",
+            "monk": "Bad actions must be faced, not hidden."
           }
         },
         {
-          "text": "Amnesty and reform the system",
+          "text": "Forgive and fix the system",
           "effects": {
             "pillars": { "economy": 4, "environment": 0, "culture": 0, "governance": -4 },
             "hidden": { "social_unrest": 2, "ecological_stress": 0, "corruption_index": -10, "foreign_influence": 4, "public_trust": -4 }
           },
           "advisors": {
-            "economist": "Stability returns faster with forgiveness.",
-            "ranger": "A wound half-healed still festers.",
-            "monk": "Mercy opens the door to change."
+            "economist": "Peace returns faster if we forgive.",
+            "ranger": "A wound half-healed will still hurt.",
+            "monk": "Showing mercy opens the door to change."
           }
         }
       ]
@@ -231,8 +231,8 @@
     {
       "id": "trust_crisis",
       "flag": "trust_crisis",
-      "title": "Crisis of Public Trust",
-      "description": "The public has lost all confidence in the government and institutions. Civic participation is at an all-time low.",
+      "title": "People Don't Trust Leaders",
+      "description": "The public has lost all faith in the government and other groups. Few people want to take part in civic life.",
       "trigger": {
         "type": "combined",
         "conditions": {
@@ -241,27 +241,27 @@
       },
       "options": [
         {
-          "text": "Launch transparency and citizen engagement campaign",
+          "text": "Be more open and talk with citizens",
           "effects": {
             "pillars": { "economy": 0, "environment": 0, "culture": 4, "governance": 4 },
             "hidden": { "social_unrest": -4, "ecological_stress": 0, "corruption_index": -4, "foreign_influence": 0, "public_trust": 14 }
           },
           "advisors": {
-            "economist": "Campaigns cost money with no direct return.",
+            "economist": "Talking costs money and makes no direct profit.",
             "ranger": "Open skies hide no storms.",
-            "monk": "Truth spoken plainly rebuilds the bridge."
+            "monk": "Speaking plainly builds a bridge."
           }
         },
         {
-          "text": "Commission independent oversight bodies",
+          "text": "Create outside groups to watch over things",
           "effects": {
             "pillars": { "economy": -4, "environment": 0, "culture": 0, "governance": 8 },
             "hidden": { "social_unrest": 0, "ecological_stress": 0, "corruption_index": -4, "foreign_influence": -4, "public_trust": 8 }
           },
           "advisors": {
-            "economist": "Bureaucracy breeds more bureaucracy.",
-            "ranger": "Watchers in the tower spot the smoke early.",
-            "monk": "External eyes see what internal ones miss."
+            "economist": "More groups mean more paperwork.",
+            "ranger": "Watchers in the tower see the smoke early.",
+            "monk": "Outside eyes see what inside eyes miss."
           }
         }
       ]
@@ -269,8 +269,8 @@
     {
       "id": "foreign_influence_overreach",
       "flag": "foreign_influence_crisis",
-      "title": "Foreign Influence Overreach",
-      "description": "External powers are exerting excessive control over the district's politics and economy, threatening sovereignty.",
+      "title": "Other Countries Have Too Much Power Here",
+      "description": "Outside powers are controlling too much of our politics and money, threatening our freedom to make our own choices.",
       "trigger": {
         "type": "combined",
         "conditions": {
@@ -279,27 +279,27 @@
       },
       "options": [
         {
-          "text": "Renegotiate treaties and reduce dependency",
+          "text": "Change agreements and rely less on them",
           "effects": {
             "pillars": { "economy": -8, "environment": 0, "culture": 0, "governance": 8 },
             "hidden": { "social_unrest": 0, "ecological_stress": 0, "corruption_index": -4, "foreign_influence": -14, "public_trust": 4 }
           },
           "advisors": {
-            "economist": "Renegotiation risks trade retaliation.",
+            "economist": "Changing deals might make trade harder.",
             "ranger": "A bird in its own nest sings freely.",
-            "monk": "Independence is the root of self-respect."
+            "monk": "Being independent is key to self-respect."
           }
         },
         {
-          "text": "Nationalize foreign-owned assets",
+          "text": "Take back foreign-owned businesses",
           "effects": {
             "pillars": { "economy": 4, "environment": -4, "culture": 0, "governance": 0 },
             "hidden": { "social_unrest": 4, "ecological_stress": 0, "corruption_index": 2, "foreign_influence": -10, "public_trust": -4 }
           },
           "advisors": {
-            "economist": "Seized assets still need skilled hands.",
+            "economist": "Taking things still needs people who know how to run them.",
             "ranger": "What was taken once is taken again.",
-            "monk": "Grasping creates more grasping."
+            "monk": "Grabbing creates more grabbing."
           }
         }
       ]
@@ -307,8 +307,8 @@
     {
       "id": "eco_collapse_low_env",
       "flag": "eco_collapse",
-      "title": "Ecological Collapse",
-      "description": "The environment is severely degraded, and natural disasters are devastating communities. The situation is dire.",
+      "title": "Nature Falls Apart",
+      "description": "The environment is very badly damaged, and natural disasters are hurting communities. The situation is really bad.",
       "trigger": {
         "type": "combined",
         "conditions": {
@@ -318,27 +318,27 @@
       },
       "options": [
         {
-          "text": "Emergency evacuation and relocation",
+          "text": "Emergency move people to safety",
           "effects": {
             "pillars": { "economy": -12, "environment": -8, "culture": 0, "governance": 4 },
             "hidden": { "social_unrest": 4, "ecological_stress": -8, "corruption_index": 0, "foreign_influence": 0, "public_trust": -4 }
           },
           "advisors": {
-            "economist": "Moving people is cheaper than moving mountains.",
-            "ranger": "Abandoning the land abandons its spirit.",
-            "monk": "Even impermanence deserves a dignified farewell."
+            "economist": "Moving people costs less than moving mountains.",
+            "ranger": "Leaving the land leaves behind its spirit.",
+            "monk": "Even things that don't last deserve a good goodbye."
           }
         },
         {
-          "text": "Massive ecological restoration project",
+          "text": "Huge project to fix nature",
           "effects": {
             "pillars": { "economy": -8, "environment": 18, "culture": 4, "governance": 0 },
             "hidden": { "social_unrest": 0, "ecological_stress": -14, "corruption_index": 0, "foreign_influence": -4, "public_trust": 4 }
           },
           "advisors": {
-            "economist": "Restoration is an investment in future harvests.",
-            "ranger": "The forest remembers those who return to mend it.",
-            "monk": "Healing what was broken is the deepest practice."
+            "economist": "Fixing nature is a bet on future harvests.",
+            "ranger": "The forest remembers those who come to heal it.",
+            "monk": "Fixing what is broken is the deepest practice."
           }
         }
       ]
@@ -346,8 +346,8 @@
     {
       "id": "civil_unrest_low_trust",
       "flag": "civil_unrest",
-      "title": "Civil Unrest Amidst Distrust",
-      "description": "Angry citizens distrust authorities, and protests are escalating into civil disobedience.",
+      "title": "People Rebel Because They Don't Trust Leaders",
+      "description": "Angry people don't trust those in charge, and protests are becoming acts of rebellion.",
       "trigger": {
         "type": "combined",
         "conditions": {
@@ -357,27 +357,27 @@
       },
       "options": [
         {
-          "text": "Community dialogue and reconciliation",
+          "text": "Talk and make peace with communities",
           "effects": {
             "pillars": { "economy": 0, "environment": 0, "culture": 4, "governance": 4 },
             "hidden": { "social_unrest": -14, "ecological_stress": 0, "corruption_index": -4, "foreign_influence": 0, "public_trust": 8 }
           },
           "advisors": {
-            "economist": "Talking does not fill empty stomachs.",
+            "economist": "Talking doesn't fill empty stomachs.",
             "ranger": "A circle of voices is stronger than a wall.",
-            "monk": "Reconciliation is built one conversation at a time."
+            "monk": "Making peace is built one talk at a time."
           }
         },
         {
-          "text": "Increase security forces and curfews",
+          "text": "Send more police and set curfews",
           "effects": {
             "pillars": { "economy": -4, "environment": 0, "culture": 0, "governance": -8 },
             "hidden": { "social_unrest": -4, "ecological_stress": 0, "corruption_index": 4, "foreign_influence": 0, "public_trust": -8 }
           },
           "advisors": {
-            "economist": "Security spending is a necessary drain.",
-            "ranger": "Cages do not tame the wild, they only hide it.",
-            "monk": "Fear is a poor foundation for peace."
+            "economist": "Spending on security is a necessary cost.",
+            "ranger": "Cages don't tame the wild, they just hide it.",
+            "monk": "Fear is a bad foundation for peace."
           }
         }
       ]
@@ -385,8 +385,8 @@
     {
       "id": "econ_foreign_crisis",
       "flag": "econ_foreign_crisis",
-      "title": "Economic Vulnerability to Foreign Influence",
-      "description": "The weak economy is easily manipulated by foreign interests, leading to exploitation and loss of control.",
+      "title": "Money Troubles and Outside Control",
+      "description": "Our weak money situation lets other countries control us, leading to being taken advantage of and loss of freedom.",
       "trigger": {
         "type": "combined",
         "conditions": {
@@ -396,27 +396,27 @@
       },
       "options": [
         {
-          "text": "Impose capital controls and trade barriers",
+          "text": "Control money flow and limit trade",
           "effects": {
             "pillars": { "economy": -4, "environment": 0, "culture": 0, "governance": 8 },
             "hidden": { "social_unrest": 4, "ecological_stress": 0, "corruption_index": 4, "foreign_influence": -10, "public_trust": 0 }
           },
           "advisors": {
-            "economist": "Walls around money starve the market.",
+            "economist": "Walls around money hurt the market.",
             "ranger": "A closed valley keeps its water, but also its floods.",
-            "monk": "Attachment to control often breeds chaos."
+            "monk": "Holding on too tight often brings chaos."
           }
         },
         {
-          "text": "Seek diversified international partnerships",
+          "text": "Find many different country partners",
           "effects": {
             "pillars": { "economy": 8, "environment": 0, "culture": 4, "governance": 0 },
             "hidden": { "social_unrest": 0, "ecological_stress": 0, "corruption_index": 0, "foreign_influence": -4, "public_trust": 4 }
           },
           "advisors": {
             "economist": "Many ropes are harder to cut than one.",
-            "ranger": "A forest with many species weathers the storm.",
-            "monk": "Balance comes from many supports, not one."
+            "ranger": "A forest with many trees survives the storm.",
+            "monk": "Balance comes from many, not one."
           }
         }
       ]
@@ -424,8 +424,8 @@
     {
       "id": "culture_gov_decline",
       "flag": "culture_gov_decline",
-      "title": "Cultural and Governance Decline",
-      "description": "Both cultural identity and administrative competence are rapidly deteriorating. The fabric of society is unraveling.",
+      "title": "Losing Our Way and Good Leadership",
+      "description": "Both our cultural identity and how we are governed are getting worse fast. The fabric of society is coming apart.",
       "trigger": {
         "type": "combined",
         "conditions": {
@@ -435,27 +435,27 @@
       },
       "options": [
         {
-          "text": "Cultural revival and governance reform",
+          "text": "Bring back culture and fix how we're run",
           "effects": {
             "pillars": { "economy": -8, "environment": 0, "culture": 14, "governance": 14 },
             "hidden": { "social_unrest": -4, "ecological_stress": 0, "corruption_index": 0, "foreign_influence": 0, "public_trust": 8 }
           },
           "advisors": {
-            "economist": "Reform is expensive and slow.",
-            "ranger": "Roots deepened hold the soil against any wind.",
-            "monk": "Renewing tradition and discipline is the middle way."
+            "economist": "Fixing things is costly and slow.",
+            "ranger": "Deep roots hold the soil against any wind.",
+            "monk": "Renewing tradition and rules is the middle way."
           }
         },
         {
-          "text": "Merge with neighboring district for stability",
+          "text": "Join with a nearby area for stability",
           "effects": {
             "pillars": { "economy": -4, "environment": 0, "culture": -4, "governance": 4 },
             "hidden": { "social_unrest": 0, "ecological_stress": 0, "corruption_index": 4, "foreign_influence": 4, "public_trust": 0 }
           },
           "advisors": {
-            "economist": "Consolidation reduces overhead.",
-            "ranger": "Two rivers merged lose their separate songs.",
-            "monk": "Surrendering identity for comfort is no peace."
+            "economist": "Coming together lowers costs.",
+            "ranger": "Two rivers joined lose their separate songs.",
+            "monk": "Giving up who we are for comfort is not peace."
           }
         }
       ]
@@ -463,8 +463,8 @@
     {
       "id": "low_trust_low_culture",
       "flag": "trust_culture_crisis",
-      "title": "Identity Crisis: Trust and Culture Eroding",
-      "description": "With public trust crumbling and cultural pride fading, society is losing its sense of shared purpose. Urgent action is needed.",
+      "title": "Who Are We? Trust and Culture Are Slipping",
+      "description": "With trust in leaders crumbling and cultural pride fading, society is losing its sense of togetherness. We need to act now.",
       "trigger": {
         "type": "combined",
         "conditions": {
@@ -474,25 +474,25 @@
       },
       "options": [
         {
-          "text": "Launch a 'Pride in Our Roots' festival and civic education",
+          "text": "Hold a 'Proud of Our Roots' festival and teach civic values",
           "effects": {
             "pillars": { "economy": -2, "environment": 0, "culture": 12, "governance": 4 },
             "hidden": { "social_unrest": -4, "ecological_stress": 0, "corruption_index": 0, "foreign_influence": -2, "public_trust": 10 }
           },
           "advisors": {
-            "economist": "Festivals generate tourism and local spending.",
-            "ranger": "Celebration of place reminds people why it matters.",
-            "monk": "Joy in heritage is a light against darkness."
+            "economist": "Festivals bring in tourists and spending.",
+            "ranger": "Celebrating where we live reminds us why it matters.",
+            "monk": "Joy in our heritage shines a light in the dark."
           }
         },
         {
-          "text": "Create community councils with real decision-making power",
+          "text": "Create village councils with real power",
           "effects": {
             "pillars": { "economy": 0, "environment": 0, "culture": 6, "governance": 10 },
             "hidden": { "social_unrest": -4, "ecological_stress": 0, "corruption_index": -4, "foreign_influence": 0, "public_trust": 12 }
           },
           "advisors": {
-            "economist": "Decentralization speeds some decisions, slows others.",
+            "economist": "Sharing power speeds some choices, slows others.",
             "ranger": "Those who live in the forest should guide its care.",
             "monk": "Power shared is power multiplied."
           }
@@ -502,8 +502,8 @@
     {
       "id": "economic_environment_crisis",
       "flag": "econ_env_crisis",
-      "title": "Resource Scarcity and Economic Decline",
-      "description": "Over‑exploitation of natural resources has depleted forests and rivers, crippling both the economy and the ecosystem.",
+      "title": "Not Enough Resources and Money Problems",
+      "description": "Using up too much of nature has destroyed forests and rivers, hurting both the economy and the environment.",
       "trigger": {
         "type": "combined",
         "conditions": {
@@ -513,27 +513,27 @@
       },
       "options": [
         {
-          "text": "Introduce sustainable resource quotas and invest in eco‑industry",
+          "text": "Set limits on taking resources and support green business",
           "effects": {
             "pillars": { "economy": 6, "environment": 12, "culture": 0, "governance": 4 },
             "hidden": { "social_unrest": -2, "ecological_stress": -10, "corruption_index": -4, "foreign_influence": -4, "public_trust": 6 }
           },
           "advisors": {
-            "economist": "Quotas hurt short-term output but build long-term stock.",
-            "ranger": "Taking only what returns is the law of the wild.",
-            "monk": "Restraint today is abundance tomorrow."
+            "economist": "Limits hurt now but help later.",
+            "ranger": "Take only what grows back—that's nature's rule.",
+            "monk": "Saving today means having more tomorrow."
           }
         },
         {
-          "text": "Open resource extraction to foreign companies for quick revenue",
+          "text": "Let foreign companies take resources for quick cash",
           "effects": {
             "pillars": { "economy": 12, "environment": -14, "culture": -6, "governance": -4 },
             "hidden": { "social_unrest": 6, "ecological_stress": 12, "corruption_index": 8, "foreign_influence": 14, "public_trust": -10 }
           },
           "advisors": {
-            "economist": "Quick revenue plugs the leak today.",
+            "economist": "Quick cash fixes the leak today.",
             "ranger": "Selling the mountain leaves only a hole.",
-            "monk": "Desperation is the mother of regret."
+            "monk": "Doing things out of fear often leads to regret."
           }
         }
       ]

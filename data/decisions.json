@@ -5,7 +5,7 @@
       "title": "Internet for Remote Villages",
       "category": "governance",
       "phase": "early",
-      "description": "A telecom company proposes laying fiber optic cables to connect remote villages, promising economic opportunities. The project requires clearing forested paths and installing towers, which disturbs wildlife and traditional ways.",
+      "description": "A phone company wants to run cables to faraway villages to help people get online and find new jobs. But the work means cutting through forests and putting up towers, which bothers animals and changes old ways of living.",
       "prerequisites": {
         "min_turn": 0,
         "max_turn": 5,
@@ -14,7 +14,7 @@
       },
       "options": [
         {
-          "text": "Approve fiber optic expansion immediately",
+          "text": "Approve the cable project right away",
           "effects": {
             "pillars": {
               "economy": 12,
@@ -39,17 +39,17 @@
                 "pillars": { "culture": -4 },
                 "hidden": { "foreign_influence": 6 }
               },
-              "message": "Foreign streaming content erodes local storytelling traditions."
+              "message": "Shows and songs from other countries take over local stories."
             }
           ],
           "advisors": {
-            "economist": "Connectivity will spark entrepreneurship.",
-            "ranger": "Trenches will scar pristine habitats.",
-            "monk": "Real connection comes from within, not wires."
+            "economist": "The internet will bring new business ideas.",
+            "ranger": "Digging will hurt the homes of animals.",
+            "monk": "Real friendship is found within, not on a screen."
           }
         },
         {
-          "text": "Reject expansion, preserve traditional isolation",
+          "text": "Say no, keep the villages cut off",
           "effects": {
             "pillars": {
               "economy": -10,
@@ -69,13 +69,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Isolation condemns youth to poverty.",
-            "ranger": "Forests remain untouched, magnificent!",
-            "monk": "Preserving silence guards spiritual depth."
+            "economist": "Young people will miss out on new chances.",
+            "ranger": "The forest stays green and beautiful!",
+            "monk": "Quiet helps the spirit grow."
           }
         },
         {
-          "text": "Pilot solar-powered community Wi-Fi hubs",
+          "text": "Try solar-powered community Wi-Fi spots",
           "effects": {
             "pillars": {
               "economy": 4,
@@ -100,13 +100,13 @@
                 "pillars": { "economy": 4 },
                 "hidden": { "public_trust": 4 }
               },
-              "message": "Local digital literacy workshops begin to flourish."
+              "message": "Local classes on using computers start to grow."
             }
           ],
           "advisors": {
-            "economist": "Small steps, but sustainable growth.",
-            "ranger": "Clever, minimal forest intrusion.",
-            "monk": "Balance—sharing knowledge wisely."
+            "economist": "Small steps, but good for the future.",
+            "ranger": "Smart, very little harm to the forest.",
+            "monk": "Balance—sharing ideas wisely."
           }
         }
       ]
@@ -116,7 +116,7 @@
       "title": "Hydropower Dam on District River",
       "category": "economic",
       "phase": "early",
-      "description": "A consortium proposes a large dam on your district's main river, promising cheap electricity and revenue from energy exports. But the dam would flood fertile farmlands and sacred sites, displacing entire communities.",
+      "description": "A group of companies wants to build a big dam on the main river to create cheap electricity and sell power to other places. But the dam would cover farms and special places with water, forcing many families to move.",
       "prerequisites": {
         "min_turn": 0,
         "max_turn": 5,
@@ -125,7 +125,7 @@
       },
       "options": [
         {
-          "text": "Approve dam construction",
+          "text": "Approve the dam project",
           "effects": {
             "pillars": {
               "economy": 12,
@@ -150,17 +150,17 @@
                 "pillars": { "environment": -8 },
                 "hidden": { "ecological_stress": 8, "social_unrest": 5 }
               },
-              "message": "Reservoir siltation and displaced families cause persistent unrest."
+              "message": "Mud builds up in the dam and people who moved are still unhappy."
             }
           ],
           "advisors": {
-            "economist": "Power exports will fund our future.",
-            "ranger": "A drowning river screams in silence.",
-            "monk": "Flooding sacred ground severs ancestral ties."
+            "economist": "Selling power will bring money for our future.",
+            "ranger": "The river is crying because it is being drowned.",
+            "monk": "Flooding sacred places cuts our link to the past."
           }
         },
         {
-          "text": "Reject dam, protect river and heritage",
+          "text": "Say no, protect the river and its stories",
           "effects": {
             "pillars": {
               "economy": -12,
@@ -180,13 +180,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "We sacrifice rivers of revenue.",
-            "ranger": "The river will sing forever.",
-            "monk": "We honor our ancestors' spirits."
+            "economist": "We give up a lot of money.",
+            "ranger": "The river will stay happy forever.",
+            "monk": "We show respect for our ancestors."
           }
         },
         {
-          "text": "Negotiate a smaller run-of-river project",
+          "text": "Talk about building a much smaller dam",
           "effects": {
             "pillars": {
               "economy": 6,
@@ -206,9 +206,9 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Half a loaf is better than none.",
-            "ranger": "Still a wound, but smaller.",
-            "monk": "Compromise is the path of the middle way."
+            "economist": "Getting something is better than nothing.",
+            "ranger": "It still hurts, but not as much.",
+            "monk": "Finding a middle way is the best path."
           }
         }
       ]
@@ -218,7 +218,7 @@
       "title": "Enforce Plastic Ban",
       "category": "environmental",
       "phase": "early",
-      "description": "Single-use plastics are choking streams and killing livestock. A strict ban on plastic bags and packaging is proposed, but traders warn it could devastate small businesses reliant on cheap packaging.",
+      "description": "Plastic bags and wrappers are blocking streams and making animals sick. Some people want a ban on these plastics, but sellers worry it will hurt their small shops.",
       "prerequisites": {
         "min_turn": 0,
         "max_turn": 5,
@@ -227,7 +227,7 @@
       },
       "options": [
         {
-          "text": "Issue unlimited exemptions for businesses",
+          "text": "Let businesses keep using plastic freely",
           "effects": {
             "pillars": {
               "economy": 10,
@@ -247,13 +247,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Protecting small shops prevents collapse.",
-            "ranger": "Plastic rivers kill sacred fish.",
-            "monk": "Greed disguised as compassion."
+            "economist": "It keeps small shops from going under.",
+            "ranger": "Plastic in the river is killing fish.",
+            "monk": "Putting profit first is not kindness."
           }
         },
         {
-          "text": "Enforce strict ban with heavy fines",
+          "text": "Ban plastic completely with big fines",
           "effects": {
             "pillars": {
               "economy": -10,
@@ -278,17 +278,17 @@
                 "pillars": { "culture": 4 },
                 "hidden": { "public_trust": 4 }
               },
-              "message": "Traditional woven baskets regain popularity."
+              "message": "Handmade baskets and cloth bags are becoming popular again."
             }
           ],
           "advisors": {
-            "economist": "Small vendors will be crushed.",
-            "ranger": "Nature finally breathes again.",
-            "monk": "Discipline purifies the land."
+            "economist": "Small sellers will really struggle.",
+            "ranger": "Finally, nature can heal.",
+            "monk": "Following rules makes the land clean."
           }
         },
         {
-          "text": "Phase-in ban with support for alternatives",
+          "text": "Slowly stop plastic and help find new options",
           "effects": {
             "pillars": {
               "economy": -3,
@@ -308,9 +308,9 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Gradual transition cushions the blow.",
-            "ranger": "Too slow, but better than nothing.",
-            "monk": "Patient change endures."
+            "economist": "A slow change is easier on people.",
+            "ranger": "A bit slow, but it's something.",
+            "monk": "Steady change lasts the longest."
           }
         }
       ]
@@ -320,7 +320,7 @@
       "title": "Decline of National Language",
       "category": "cultural",
       "phase": "early",
-      "description": "Students increasingly prefer English, and fluency in the national language is plummeting. A proposal mandates all subjects taught in the mother tongue until grade 8, but employers fear graduates lacking English skills.",
+      "description": "Students are using English more and more, and fewer children speak the national language well. Some want all classes in the mother tongue until 8th grade, but bosses worry students won't learn enough English for jobs.",
       "prerequisites": {
         "min_turn": 0,
         "max_turn": 5,
@@ -329,7 +329,7 @@
       },
       "options": [
         {
-          "text": "Mandate English-only from grade 4",
+          "text": "Teach only English from 4th grade",
           "effects": {
             "pillars": {
               "economy": 12,
@@ -349,13 +349,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Global job market demands English.",
-            "ranger": "Language loss erodes nature's names.",
-            "monk": "Without mother tongue, wisdom fades."
+            "economist": "Good English helps with global jobs.",
+            "ranger": "Forgetting our words means forgetting nature's names.",
+            "monk": "Losing our mother tongue makes wisdom fade."
           }
         },
         {
-          "text": "Impose mother-tongue medium until grade 8",
+          "text": "Teach only mother tongue until 8th grade",
           "effects": {
             "pillars": {
               "economy": -10,
@@ -375,13 +375,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Our graduates will fall behind.",
-            "ranger": "Language roots bind people to land.",
-            "monk": "Preserving speech preserves the soul."
+            "economist": "Our kids will fall behind others.",
+            "ranger": "Our language connects us to the land.",
+            "monk": "Our words carry our spirit."
           }
         },
         {
-          "text": "Bilingual immersion with cultural festivals",
+          "text": "Teach both languages and hold cultural fairs",
           "effects": {
             "pillars": {
               "economy": 4,
@@ -406,13 +406,13 @@
                 "pillars": { "culture": 4 },
                 "hidden": { "public_trust": 4 }
               },
-              "message": "Intergenerational storytelling events grow."
+              "message": "Storytelling events with older people are becoming more common."
             }
           ],
           "advisors": {
-            "economist": "A bilingual workforce is adaptable.",
-            "ranger": "Singing the old names protects mountains.",
-            "monk": "Harmony of tongues, harmony of hearts."
+            "economist": "Knowing two languages makes people flexible.",
+            "ranger": "Singing old songs helps protect the hills.",
+            "monk": "Living with many tongues brings peace."
           }
         }
       ]
@@ -422,7 +422,7 @@
       "title": "Foreign Hotel on Forest Land",
       "category": "economic",
       "phase": "early",
-      "description": "An international hotel chain offers massive investment to build a luxury resort on pristine forest land, promising jobs and tourism revenue. Environmentalists warn of deforestation and spiritual site destruction.",
+      "description": "A big international hotel wants to build a fancy resort in a beautiful forest, promising jobs and tourists. But forest lovers warn it will cut trees and destroy special places.",
       "prerequisites": {
         "min_turn": 0,
         "max_turn": 5,
@@ -431,7 +431,7 @@
       },
       "options": [
         {
-          "text": "Approve full hotel development",
+          "text": "Approve the full hotel project",
           "effects": {
             "pillars": {
               "economy": 14,
@@ -451,13 +451,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Tourism goldmine, jobs galore!",
-            "ranger": "Ancient trees will become lobbies.",
-            "monk": "Selling sacred ground invites curses."
+            "economist": "Tourism brings jobs and money!",
+            "ranger": "Ancient trees will be turned into hotel lobbies.",
+            "monk": "Selling our sacred places brings bad luck."
           }
         },
         {
-          "text": "Reject, designate protected forest",
+          "text": "Say no, make the forest a protected area",
           "effects": {
             "pillars": {
               "economy": -12,
@@ -477,13 +477,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "We strangle our own prosperity.",
-            "ranger": "Sanctuary for spirits and species.",
-            "monk": "Protecting nature is the highest prayer."
+            "economist": "We are stopping our own wealth.",
+            "ranger": "A safe place for spirits and animals.",
+            "monk": "Taking care of nature is the best prayer."
           }
         },
         {
-          "text": "Mandate eco-lodge with community ownership",
+          "text": "Make them build an eco-lodge owned by locals",
           "effects": {
             "pillars": {
               "economy": 6,
@@ -508,13 +508,13 @@
                 "pillars": { "economy": 4 },
                 "hidden": { "public_trust": 4 }
               },
-              "message": "Community-led eco-tourism earns national praise."
+              "message": "People across the country praise the community-led eco-lodge."
             }
           ],
           "advisors": {
-            "economist": "Local ownership keeps profits home.",
-            "ranger": "Careful design treads lightly.",
-            "monk": "A balance of commerce and compassion."
+            "economist": "Keeping the money in the community.",
+            "ranger": "Built carefully to not harm nature.",
+            "monk": "A good mix of doing business and being kind."
           }
         }
       ]
@@ -524,7 +524,7 @@
       "title": "Tourism Growing Too Fast",
       "category": "economic",
       "phase": "mid",
-      "description": "A tourism boom fills guesthouses and trails, but the surge is overwhelming waste systems and eroding trails. Locals complain of cultural commodification and rising prices.",
+      "description": "Many tourists are coming, filling up rooms and trails, but it is too much. Trash is piling up, paths are getting ruined, and locals feel their culture is being turned into a show.",
       "prerequisites": {
         "min_turn": 6,
         "max_turn": 10,
@@ -533,7 +533,7 @@
       },
       "options": [
         {
-          "text": "Launch aggressive marketing campaign",
+          "text": "Start a big ad campaign to get even more tourists",
           "effects": {
             "pillars": {
               "economy": 12,
@@ -558,17 +558,17 @@
                 "pillars": { "environment": -8 },
                 "hidden": { "ecological_stress": 8 }
               },
-              "message": "Trail erosion leads to dangerous landslides."
+              "message": "Paths are breaking and causing dangerous mudslides."
             }
           ],
           "advisors": {
-            "economist": "Empty beds earn no money.",
-            "ranger": "Our trails become trash scars.",
-            "monk": "Sacred dances sold as selfies."
+            "economist": "Empty rooms make no money.",
+            "ranger": "Our trails are getting ruined.",
+            "monk": "Our sacred dances are becoming a show for photos."
           }
         },
         {
-          "text": "Impose strict visitor limits and fees",
+          "text": "Put a limit on visitors and charge entry fees",
           "effects": {
             "pillars": {
               "economy": -10,
@@ -588,13 +588,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Revenue will plummet, jobs vanish.",
-            "ranger": "Finally, nature can heal.",
-            "monk": "Pilgrimage, not circus."
+            "economist": "Money will drop, jobs will be lost.",
+            "ranger": "Finally, nature can have a rest.",
+            "monk": "A journey of spirit, not a show."
           }
         },
         {
-          "text": "Promote regional dispersal with incentives",
+          "text": "Encourage tourists to visit other areas with deals",
           "effects": {
             "pillars": {
               "economy": 4,
@@ -614,9 +614,9 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Spread the wealth, reduce pressure.",
-            "ranger": "Share the burden, share the beauty.",
-            "monk": "Wise hosts guide, not exploit."
+            "economist": "Share the money, share the pressure.",
+            "ranger": "Share the visitors, share the beauty.",
+            "monk": "Good hosts guide, they don't take advantage."
           }
         }
       ]
@@ -626,7 +626,7 @@
       "title": "Road Through Monastery Area",
       "category": "cultural",
       "phase": "mid",
-      "description": "Engineers propose a road cutting through a serene monastic landscape to connect two valleys, slashing travel time. Monks and villagers protest, warning of noise, pollution, and spiritual disruption.",
+      "description": "Engineers want to build a road through a quiet area where monks live, to make travel between valleys much faster. Monks and villagers worry about the noise, dirt, and peace being broken.",
       "prerequisites": {
         "min_turn": 6,
         "max_turn": 10,
@@ -635,7 +635,7 @@
       },
       "options": [
         {
-          "text": "Build road for economic connectivity",
+          "text": "Build the road for better connections",
           "effects": {
             "pillars": {
               "economy": 12,
@@ -655,13 +655,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Connected valleys, thriving trade.",
-            "ranger": "Bulldozers through prayer grounds.",
-            "monk": "Noise kills meditation."
+            "economist": "Connected valleys mean more trade.",
+            "ranger": "Machines will break up the quiet grounds.",
+            "monk": "Noise makes meditation impossible."
           }
         },
         {
-          "text": "Preserve sacred silence, no road",
+          "text": "Protect the quiet, don't build the road",
           "effects": {
             "pillars": {
               "economy": -10,
@@ -681,13 +681,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Isolation breeds stagnation.",
-            "ranger": "Stillness is its own wealth.",
-            "monk": "Wise ancestors protect this place."
+            "economist": "Staying cut off brings no new ideas.",
+            "ranger": "Quiet is its own kind of wealth.",
+            "monk": "Our wise elders protected this place."
           }
         },
         {
-          "text": "Construct a low-impact pilgrimage trail",
+          "text": "Build a small walking path for visitors",
           "effects": {
             "pillars": {
               "economy": 3,
@@ -707,9 +707,9 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Modest gains, but respectful.",
-            "ranger": "Footpaths leave gentle prints.",
-            "monk": "A path of devotion, not speed."
+            "economist": "Small gains, but it's respectful.",
+            "ranger": "Walking paths leave barely a mark.",
+            "monk": "A path for prayer, not for speed."
           }
         }
       ]
@@ -719,7 +719,7 @@
       "title": "Chemical vs Traditional Farming",
       "category": "environmental",
       "phase": "mid",
-      "description": "Farmers demand synthetic fertilizers and pesticides to boost yields against growing food demand. Yet traditional organic methods have sustained the land for centuries without poisoning the soil.",
+      "description": "Farmers want chemical fertilizers and bug killers to grow more food for more people. But old-fashioned organic farming has kept the land good for hundreds of years.",
       "prerequisites": {
         "min_turn": 6,
         "max_turn": 10,
@@ -728,7 +728,7 @@
       },
       "options": [
         {
-          "text": "Subsidize chemical inputs for farmers",
+          "text": "Pay for farmers to use chemicals",
           "effects": {
             "pillars": {
               "economy": 12,
@@ -753,17 +753,17 @@
                 "pillars": { "environment": -8 },
                 "hidden": { "ecological_stress": 4 }
               },
-              "message": "Water sources show alarming toxicity levels."
+              "message": "Water sources are showing dangerous levels of poison."
             }
           ],
           "advisors": {
-            "economist": "High yields, food security.",
-            "ranger": "Soil dies, future starves.",
-            "monk": "Poisoning the earth poisons the soul."
+            "economist": "More food, secure meals for everyone.",
+            "ranger": "The soil will die, and so will the future.",
+            "monk": "Poisoning the earth poisons us all."
           }
         },
         {
-          "text": "Mandate organic farming, ban chemicals",
+          "text": "Make all farming organic, ban chemicals",
           "effects": {
             "pillars": {
               "economy": -10,
@@ -783,13 +783,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Yields will crash, hunger looms.",
-            "ranger": "Nature's way is eternal.",
-            "monk": "Respect the web of life."
+            "economist": "Food will be less, hunger may come.",
+            "ranger": "Nature's way lasts forever.",
+            "monk": "Respect all the living things."
           }
         },
         {
-          "text": "Integrated pest management with training",
+          "text": "Use smart farming and teach new ways",
           "effects": {
             "pillars": {
               "economy": 4,
@@ -809,9 +809,9 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Smart farming balances books.",
-            "ranger": "Healthy fields, buzzing bees.",
-            "monk": "Wisdom marries old and new."
+            "economist": "Smart farming keeps the money in balance.",
+            "ranger": "Healthy fields and happy bees.",
+            "monk": "Using wisdom from old and new."
           }
         }
       ]
@@ -821,7 +821,7 @@
       "title": "Manage Dam's Environmental Toll",
       "category": "environmental",
       "phase": "mid",
-      "description": "The dam is operational, but downstream ecosystems are collapsing, and siltation threatens its lifespan. Urgent measures are needed to mitigate damage while energy revenues flow.",
+      "description": "The dam is working, but the river downstream is dying and mud is filling the dam. We need to fix these problems, but we also need the power it makes.",
       "prerequisites": {
         "min_turn": 6,
         "max_turn": 10,
@@ -830,7 +830,7 @@
       },
       "options": [
         {
-          "text": "Maximize power output, ignore ecology",
+          "text": "Make as much power as possible, ignore nature",
           "effects": {
             "pillars": {
               "economy": 14,
@@ -855,17 +855,17 @@
                 "pillars": { "environment": -8 },
                 "hidden": { "ecological_stress": 8 }
               },
-              "message": "Fish stocks collapse, angering fishermen."
+              "message": "Fish numbers are dropping, people who fish are angry."
             }
           ],
           "advisors": {
-            "economist": "Full throttle repays debts.",
-            "ranger": "A river murdered for megawatts.",
-            "monk": "Greed blinds us to downstream tears."
+            "economist": "Full speed helps pay back loans.",
+            "ranger": "A river murdered for electricity.",
+            "monk": "Wanting too much makes us blind to those downstream."
           }
         },
         {
-          "text": "Release environmental flows, cut power",
+          "text": "Let some water flow for the river, even if it means less power",
           "effects": {
             "pillars": {
               "economy": -10,
@@ -885,13 +885,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Reduced revenue, but river lives.",
-            "ranger": "The river gasps back to life.",
-            "monk": "Giving back is true wealth."
+            "economist": "Less money, but the river lives.",
+            "ranger": "The river is gasping back to life.",
+            "monk": "Giving back is real richness."
           }
         },
         {
-          "text": "Retrofit with fish ladders and sediment bypass",
+          "text": "Add fish ladders and ways to move mud",
           "effects": {
             "pillars": {
               "economy": -3,
@@ -911,9 +911,9 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Costly but preserves asset.",
-            "ranger": "Some healing, but scar remains.",
-            "monk": "Repair what can be repaired."
+            "economist": "Costly but keeps the dam working.",
+            "ranger": "Some healing, but the scar is still there.",
+            "monk": "Fix what you can fix."
           }
         }
       ]
@@ -923,7 +923,7 @@
       "title": "Expand Digital Literacy Programs",
       "category": "cultural",
       "phase": "mid",
-      "description": "With internet now reaching villages, a proposal emerges to equip schools with digital devices and teach coding, but elders fear it will accelerate the erosion of traditional skills and storytelling.",
+      "description": "Now that villages have the internet, some people want to give schools computers and teach kids to code. But older people worry it will make kids forget old skills and stories.",
       "prerequisites": {
         "min_turn": 6,
         "max_turn": 10,
@@ -932,7 +932,7 @@
       },
       "options": [
         {
-          "text": "Distribute tablets, prioritize tech skills",
+          "text": "Give out tablets, focus on computer skills",
           "effects": {
             "pillars": {
               "economy": 12,
@@ -952,13 +952,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Future-proof workforce.",
-            "ranger": "E-waste poisons our land.",
-            "monk": "Screens dim the inner light."
+            "economist": "Future-proof workers.",
+            "ranger": "Old electronics will poison our land.",
+            "monk": "Screens make the inner light dim."
           }
         },
         {
-          "text": "Reject devices, fund storytelling guilds",
+          "text": "Say no to devices, support storytellers instead",
           "effects": {
             "pillars": {
               "economy": -10,
@@ -978,13 +978,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "We'll miss the digital wave.",
-            "ranger": "Oral tradition guards the forest's wisdom.",
-            "monk": "Stories carry the soul of our people."
+            "economist": "We will miss the digital chance.",
+            "ranger": "Oral stories carry the forest's wisdom.",
+            "monk": "Stories carry the spirit of our people."
           }
         },
         {
-          "text": "Hybrid digital-heritage curriculum",
+          "text": "A mixed plan of computers and heritage",
           "effects": {
             "pillars": {
               "economy": 4,
@@ -1009,13 +1009,13 @@
                 "pillars": { "culture": 4 },
                 "hidden": { "public_trust": 4 }
               },
-              "message": "Students document elder stories as podcasts."
+              "message": "Students are recording elder stories as podcasts."
             }
           ],
           "advisors": {
-            "economist": "Innovation rooted in identity.",
-            "ranger": "Technology can echo ancient songs.",
-            "monk": "Wise use bridges worlds."
+            "economist": "New ideas rooted in who we are.",
+            "ranger": "Computers can also carry old songs.",
+            "monk": "Using wisely builds bridges."
           }
         }
       ]
@@ -1025,7 +1025,7 @@
       "title": "Review Strict Plastic Ban",
       "category": "environmental",
       "phase": "late",
-      "description": "Enforcement of the strict plastic ban has caused business closures and a thriving black market. Citizens demand relief, but environmentalists plead to hold the line.",
+      "description": "The tough plastic ban has made some shops close, and people are selling plastic in secret. The public wants a break, but nature lovers want to keep the ban strong.",
       "prerequisites": {
         "min_turn": 11,
         "max_turn": 15,
@@ -1034,7 +1034,7 @@
       },
       "options": [
         {
-          "text": "Relax ban, allow biodegradable plastics only",
+          "text": "Ease the ban, allow plastics that break down",
           "effects": {
             "pillars": {
               "economy": 8,
@@ -1054,13 +1054,13 @@
           "remove_flags": ["strict_plastic_ban"],
           "delayed": [],
           "advisors": {
-            "economist": "Businesses breathe again.",
+            "economist": "Businesses can breathe again.",
             "ranger": "A step back, plastic still flows.",
-            "monk": "Convenience over commitment."
+            "monk": "Choosing what's easy over what's right."
           }
         },
         {
-          "text": "Double down with stricter penalties",
+          "text": "Make the ban even stronger with bigger fines",
           "effects": {
             "pillars": {
               "economy": -8,
@@ -1080,13 +1080,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Black market will boom.",
-            "ranger": "Nature over profit, finally.",
-            "monk": "Stern discipline purifies but angers."
+            "economist": "The secret market will grow.",
+            "ranger": "Finally, nature over money.",
+            "monk": "Tough rules may clean, but they also make people angry."
           }
         },
         {
-          "text": "Subsidize traditional alternatives, maintain ban",
+          "text": "Help people make traditional items, keep the ban",
           "effects": {
             "pillars": {
               "economy": -3,
@@ -1106,9 +1106,9 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Costly but sustainable.",
-            "ranger": "Innovation honors the Earth.",
-            "monk": "Support eases the path of change."
+            "economist": "Costly but it will last.",
+            "ranger": "New ideas that honor the Earth.",
+            "monk": "Helping people makes change easier."
           }
         }
       ]
@@ -1118,7 +1118,7 @@
       "title": "Reassess Dam's Future",
       "category": "economic",
       "phase": "late",
-      "description": "The dam's debts are paid, but maintenance costs mount, and ecological damage persists. Voices call for decommissioning, while others push for an upgrade to maximize returns.",
+      "description": "The dam's debts are paid, but fixing it costs a lot, and nature is still suffering. Some want to tear it down, others want to make it bigger for more profit.",
       "prerequisites": {
         "min_turn": 11,
         "max_turn": 15,
@@ -1127,7 +1127,7 @@
       },
       "options": [
         {
-          "text": "Upgrade dam for greater capacity",
+          "text": "Make the dam bigger for more power",
           "effects": {
             "pillars": {
               "economy": 14,
@@ -1152,17 +1152,17 @@
                 "pillars": { "environment": -10 },
                 "hidden": { "ecological_stress": 8 }
               },
-              "message": "Downstream communities face catastrophic flooding risk."
+              "message": "Communities downstream face dangerous floods."
             }
           ],
           "advisors": {
-            "economist": "More power, more prosperity.",
-            "ranger": "They drown the soul of our land.",
-            "monk": "Endless appetite destroys all."
+            "economist": "More power, more money.",
+            "ranger": "They are drowning the spirit of our land.",
+            "monk": "Always wanting more destroys everything."
           }
         },
         {
-          "text": "Decommission dam, restore river",
+          "text": "Tear down the dam, bring the river back",
           "effects": {
             "pillars": {
               "economy": -10,
@@ -1182,13 +1182,13 @@
           "remove_flags": ["dam_approved"],
           "delayed": [],
           "advisors": {
-            "economist": "Madness to abandon a powerhouse.",
+            "economist": "Madness to give up a power source.",
             "ranger": "The river will dance again.",
-            "monk": "Undoing a mistake is wisdom."
+            "monk": "Fixing a mistake is true wisdom."
           }
         },
         {
-          "text": "Convert to run-of-river and eco-tourism",
+          "text": "Turn it into a small river project with tourism",
           "effects": {
             "pillars": {
               "economy": 4,
@@ -1208,9 +1208,9 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Modest profits, stable future.",
+            "economist": "Small profits, but a steady future.",
             "ranger": "A compromise for the river.",
-            "monk": "Transformation not destruction."
+            "monk": "Change, not destruction."
           }
         }
       ]
@@ -1220,7 +1220,7 @@
       "title": "Sacred Road Reconsideration",
       "category": "cultural",
       "phase": "late",
-      "description": "Years of traffic through the sacred area have disturbed peace and eroded the site's sanctity. Pilgrims and monks petition to remove the road and restore the landscape.",
+      "description": "After many years of cars driving through the sacred area, peace is broken and the place feels less special. Monks and pilgrims ask to remove the road and bring back the quiet.",
       "prerequisites": {
         "min_turn": 11,
         "max_turn": 15,
@@ -1229,7 +1229,7 @@
       },
       "options": [
         {
-          "text": "Widen road for more traffic",
+          "text": "Make the road wider for more cars",
           "effects": {
             "pillars": {
               "economy": 10,
@@ -1249,13 +1249,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Efficiency fuels growth.",
-            "ranger": "Sacrilege on a grand scale.",
-            "monk": "They pave over prayer."
+            "economist": "Speed helps business grow.",
+            "ranger": "This is a huge sin against nature.",
+            "monk": "They are paving over prayer."
           }
         },
         {
-          "text": "Remove road, restore monastery grounds",
+          "text": "Remove the road, fix the monastery grounds",
           "effects": {
             "pillars": {
               "economy": -8,
@@ -1275,13 +1275,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Wasted infrastructure, lost connectivity.",
-            "ranger": "Sanctity returns, birds sing.",
-            "monk": "Healing the sacred heals us all."
+            "economist": "Wasted money, lost connections.",
+            "ranger": "Quiet returns, birds are singing.",
+            "monk": "Fixing the sacred heals us all."
           }
         },
         {
-          "text": "Keep road but enforce silence hours",
+          "text": "Keep the road but ban cars during quiet hours",
           "effects": {
             "pillars": {
               "economy": 0,
@@ -1301,8 +1301,8 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Barely affects business.",
-            "ranger": "Small gesture, loud impact.",
+            "economist": "Hardly affects business.",
+            "ranger": "A small gesture, but it means a lot.",
             "monk": "Respecting time, respecting space."
           }
         }
@@ -1313,7 +1313,7 @@
       "title": "Volunteer Service Program",
       "category": "cultural",
       "phase": "late",
-      "description": "A national volunteer corps proposal aims to deploy youth for environmental restoration and elder care. Critics argue it diverts workers from the economy and risks forced labor.",
+      "description": "Some people want a program where young people help fix nature and care for elders. Others say it will take workers away from jobs and might be like forced work.",
       "prerequisites": {
         "min_turn": 11,
         "max_turn": 15,
@@ -1322,7 +1322,7 @@
       },
       "options": [
         {
-          "text": "Focus on private sector jobs instead",
+          "text": "Focus on creating private jobs instead",
           "effects": {
             "pillars": {
               "economy": 10,
@@ -1342,13 +1342,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Jobs, not charity, build nations.",
-            "ranger": "Neglected forests weep alone.",
-            "monk": "Without service, community withers."
+            "economist": "Jobs, not charity, build a country.",
+            "ranger": "The forests are left alone to cry.",
+            "monk": "Without helping others, the community weakens."
           }
         },
         {
-          "text": "Mandate a year of service for youth",
+          "text": "Make young people serve for one year",
           "effects": {
             "pillars": {
               "economy": -8,
@@ -1368,13 +1368,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "A year lost from labor force.",
-            "ranger": "Youth will heal the forests.",
-            "monk": "Service plants seeds of compassion."
+            "economist": "A whole year not working.",
+            "ranger": "Young people will help fix the forests.",
+            "monk": "Helping others plants seeds of kindness."
           }
         },
         {
-          "text": "Incentivize with scholarships, not mandate",
+          "text": "Give scholarships for helping, don't force them",
           "effects": {
             "pillars": {
               "economy": 6,
@@ -1394,9 +1394,9 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Choice respects the market.",
-            "ranger": "Willing hands nurture nature.",
-            "monk": "Free will earns true merit."
+            "economist": "People can choose, which is good for the market.",
+            "ranger": "People who want to help will help nature.",
+            "monk": "Doing good freely brings real reward."
           }
         }
       ]
@@ -1406,7 +1406,7 @@
       "title": "E-Sports vs Traditional Sports",
       "category": "cultural",
       "phase": "late",
-      "description": "A budget battle erupts: investing in an e-sports arena to keep youth engaged versus expanding traditional archery and khuru grounds. Both claim to build community and discipline.",
+      "description": "A fight over money: build a video game arena to keep kids interested, or make traditional archery and local sports bigger. Both say they bring people together.",
       "prerequisites": {
         "min_turn": 11,
         "max_turn": 15,
@@ -1415,7 +1415,7 @@
       },
       "options": [
         {
-          "text": "Fund e-sports arena and digital leagues",
+          "text": "Pay for the video game arena",
           "effects": {
             "pillars": {
               "economy": 10,
@@ -1435,13 +1435,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "E-sports is a billion-dollar industry.",
-            "ranger": "Screens disconnect from nature.",
-            "monk": "Virtual glory fades like pixels."
+            "economist": "Video games are a billion-dollar business.",
+            "ranger": "Screens disconnect us from nature.",
+            "monk": "Virtual fame fades away."
           }
         },
         {
-          "text": "Expand traditional archery and tournaments",
+          "text": "Grow traditional archery and events",
           "effects": {
             "pillars": {
               "economy": -8,
@@ -1461,13 +1461,13 @@
           "remove_flags": [],
           "delayed": [],
           "advisors": {
-            "economist": "Niche sport, limited growth.",
-            "ranger": "Archery connects body, land, spirit.",
-            "monk": "Ancient arts carry ancestral pride."
+            "economist": "A small sport, not much growth.",
+            "ranger": "Archery connects body, land, and spirit.",
+            "monk": "Old arts bring pride from our ancestors."
           }
         },
         {
-          "text": "Split funding, host hybrid cultural festival",
+          "text": "Split the money, host a big mixed cultural festival",
           "effects": {
             "pillars": {
               "economy": 4,
@@ -1492,13 +1492,13 @@
                 "pillars": { "culture": 4 },
                 "hidden": { "public_trust": 4 }
               },
-              "message": "A festival blending e-sports and archery unites generations."
+              "message": "A festival with video games and archery brings everyone together."
             }
           ],
           "advisors": {
-            "economist": "Compromise markets both.",
-            "ranger": "Balance honors past and future.",
-            "monk": "Unity in diversity is the path."
+            "economist": "A mix that sells both.",
+            "ranger": "Balance honors the past and the future.",
+            "monk": "Coming together is the best path."
           }
         }
       ]
